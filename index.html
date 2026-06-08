@@ -66,6 +66,7 @@
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-brand-forest/80 uppercase">
                 <a href="#purity" class="hover:text-brand-matcha transition-colors">The Standard</a>
+                <a href="#calculator" class="hover:text-brand-matcha transition-colors">Exposure Calc</a>
                 <a href="#terroir" class="hover:text-brand-matcha transition-colors">Our Farms</a>
                 <a href="#verification" class="hover:text-brand-matcha transition-colors">Batch Lookup</a>
                 <a href="#council" class="hover:text-brand-matcha transition-colors">Advisory Council</a>
@@ -117,8 +118,8 @@
                     <a href="#allocation" class="inline-flex items-center justify-center px-8 py-4 bg-brand-forest hover:bg-brand-matcha text-brand-cream text-sm font-semibold tracking-wider uppercase rounded transition-all text-center shadow-lg shadow-brand-forest/10 hover:shadow-brand-matcha/20">
                         Join Waitlist & Request Allocation
                     </a>
-                    <a href="#verification" class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-brand-cream text-brand-forest border border-brand-forest/15 text-sm font-semibold tracking-wider uppercase rounded transition-all text-center">
-                        Sandbox Verification Lookup
+                    <a href="#calculator" class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-brand-cream text-brand-forest border border-brand-forest/15 text-sm font-semibold tracking-wider uppercase rounded transition-all text-center">
+                        Exposure Calculator
                     </a>
                 </div>
             </div>
@@ -197,7 +198,7 @@
                                     <td class="py-4 px-4 font-mono text-brand-charcoal/80">None established</td>
                                     <td class="py-4 px-4 font-mono text-brand-matcha font-bold">&lt; 10 ppb</td>
                                     <td class="py-4 px-4 text-right font-mono text-brand-forest font-semibold">Virtually Zero</td>
-                                end
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -211,6 +212,134 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <!-- Interactive Heavy Metal Threshold Calculator Section -->
+    <section id="calculator" class="py-20 bg-brand-cream border-b border-brand-forest/5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <div class="font-mono text-xs tracking-wider uppercase text-brand-matcha font-semibold">Prenatal Purity Simulator</div>
+                <h2 class="font-serif text-4xl font-bold text-brand-forest tracking-tight">Heavy Metal Exposure Calculator</h2>
+                <p class="text-brand-charcoal/70 text-lg">
+                    Calculate your exact cumulative daily intake and witness how standard market brands compromise safety limits compared to Pureji.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-brand-forest/10 shadow-xl overflow-hidden max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    
+                    <!-- Calculator Parameters panel -->
+                    <div class="lg:col-span-5 p-8 bg-brand-forest text-brand-cream flex flex-col justify-between border-r border-brand-forest/20">
+                        <div class="space-y-6">
+                            <h3 class="font-serif text-2xl font-semibold text-brand-gold">Adjust Consumption</h3>
+                            <p class="text-xs text-brand-cream/70 leading-relaxed">
+                                Millennial mothers deserve numerical facts. Standard matcha is often harvested in lowland river basins where lead levels accumulate.
+                            </p>
+                            
+                            <!-- Slider 1: serving weight in grams -->
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-xs font-mono">
+                                    <span class="text-brand-cream/85">Daily Intake (Grams)</span>
+                                    <span class="text-brand-gold font-bold text-sm" id="calc-grams-display">2.0g</span>
+                                </div>
+                                <input type="range" id="calc-grams-slider" min="1.0" max="8.0" step="0.5" value="2.0" oninput="runExposureCalculator()" class="w-full accent-brand-gold bg-brand-cream/20 rounded-lg h-1.5 cursor-pointer">
+                                <div class="flex justify-between text-[10px] text-brand-cream/40 font-mono">
+                                    <span>1.0g (1/2 tsp)</span>
+                                    <span>4.0g (2 tsp)</span>
+                                    <span>8.0g (4 tsp)</span>
+                                </div>
+                            </div>
+
+                            <!-- Infographic Quick reference -->
+                            <div class="space-y-3 pt-4 border-t border-brand-cream/10">
+                                <h4 class="text-xs font-mono text-brand-gold uppercase tracking-wider font-semibold">Under the Microscope</h4>
+                                <div class="space-y-2 text-xs text-brand-cream/80 font-mono">
+                                    <div class="flex justify-between">
+                                        <span>Typical Lowland Brand:</span>
+                                        <span class="text-white font-bold">350 ppb Lead</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span>Pureji Certified Max:</span>
+                                        <span class="text-brand-gold font-bold">18 ppb Lead</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-8 border-t border-brand-cream/10 text-center lg:text-left">
+                            <span class="text-[10px] text-brand-cream/40 font-mono block">Ingestion Metric Equation:</span>
+                            <span class="text-xs text-brand-gold font-mono block mt-1">Exposure (mcg) = Grams &times; (ppb &div; 1,000)</span>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Results Visualization panel -->
+                    <div class="lg:col-span-7 p-8 space-y-8 bg-white">
+                        
+                        <!-- Header & comparison metric -->
+                        <div class="space-y-2">
+                            <h3 class="font-serif text-2xl font-semibold text-brand-forest">Calculated Daily Exposure (Lead)</h3>
+                            <p class="text-xs text-brand-charcoal/60">
+                                Cumulative toxicant exposure is compared directly against the California Prop 65 Reproductive Toxicity Threshold (<span class="font-mono text-brand-forest font-bold">0.50 mcg/day</span>).
+                            </p>
+                        </div>
+
+                        <!-- Exposure Bar Graphs -->
+                        <div class="space-y-6">
+                            
+                            <!-- 1. Typical Lowland Brand Exposure -->
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between text-xs font-mono">
+                                    <span class="font-semibold text-red-700">Typical Lowland Brand</span>
+                                    <span class="text-red-700 font-bold text-sm" id="calc-typical-exposure">0.70 mcg</span>
+                                </div>
+                                <div class="w-full bg-brand-cream h-4 rounded-full overflow-hidden relative">
+                                    <div class="bg-red-500 h-full transition-all duration-300" style="width: 100%" id="calc-typical-bar"></div>
+                                    <!-- Prop 65 Threshold line indicator -->
+                                    <div class="absolute top-0 bottom-0 border-l-2 border-brand-charcoal/40 border-dashed z-10" style="left: 71.4%" id="calc-prop65-line-typical"></div>
+                                </div>
+                                <div class="flex justify-between text-[9px] text-brand-grey font-mono uppercase">
+                                    <span>0.00 mcg</span>
+                                    <span class="text-brand-charcoal font-bold">↑ Prop 65 reproductive limit (0.50 mcg)</span>
+                                </div>
+                            </div>
+
+                            <!-- 2. Pureji Premium Sourcing Exposure -->
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between text-xs font-mono">
+                                    <span class="font-semibold text-brand-matcha">Pureji Certified Purity</span>
+                                    <span class="text-brand-matcha font-bold text-sm" id="calc-pureji-exposure">0.036 mcg</span>
+                                </div>
+                                <div class="w-full bg-brand-cream h-4 rounded-full overflow-hidden relative">
+                                    <div class="bg-brand-matcha h-full transition-all duration-300" style="width: 7.2%" id="calc-pureji-bar"></div>
+                                    <!-- Prop 65 Threshold line indicator -->
+                                    <div class="absolute top-0 bottom-0 border-l-2 border-brand-charcoal/40 border-dashed z-10" style="left: 71.4%" id="calc-prop65-line-pureji"></div>
+                                </div>
+                                <div class="flex justify-between text-[9px] text-brand-grey font-mono uppercase">
+                                    <span>0.00 mcg</span>
+                                    <span class="text-brand-matcha font-bold" id="calc-pureji-safety-factor">13.8x below threshold</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- High impact recommendation block based on intake -->
+                        <div class="p-5 rounded-xl border transition-all duration-300 flex items-start gap-4" id="calc-recommendation-box">
+                            <span class="text-3xl" id="calc-recommendation-icon">⚠️</span>
+                            <div class="space-y-1">
+                                <h4 class="font-serif text-lg font-bold" id="calc-recommendation-title">Warning: Limit Exceeded</h4>
+                                <p class="text-xs leading-relaxed text-brand-charcoal/80" id="calc-recommendation-desc">
+                                    Your simulated daily intake exceeds California Prop 65 reproductive toxicity safety limit with standard lowland brands.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -732,10 +861,70 @@
             }
         }
 
+        // Heavy Metal Exposure Calculator logic
+        function runExposureCalculator() {
+            const grams = parseFloat(document.getElementById('calc-grams-slider').value);
+            document.getElementById('calc-grams-display').textContent = `${grams.toFixed(1)}g`;
+
+            // Concentrations: Typical Lowland (350 ppb), Pureji (18 ppb)
+            const typicalLeadPpb = 350;
+            const purejiLeadPpb = 18;
+
+            // Compute micrograms (mcg) = grams * (ppb / 1000)
+            const typicalLeadExposure = grams * (typicalLeadPpb / 1000);
+            const purejiLeadExposure = grams * (purejiLeadPpb / 1000);
+
+            // Update Text Displays
+            document.getElementById('calc-typical-exposure').textContent = `${typicalLeadExposure.toFixed(3)} mcg`;
+            document.getElementById('calc-pureji-exposure').textContent = `${purejiLeadExposure.toFixed(3)} mcg`;
+
+            // Prop 65 reproductive limit is 0.50 mcg
+            const prop65Limit = 0.50;
+
+            // Safety comparison percentages for bar widths
+            // Let's cap the visual scale dynamically so that 1.0 mcg = 100% bar width
+            const maxScaleMcg = Math.max(typicalLeadExposure * 1.1, 1.0);
+            const typicalBarWidth = (typicalLeadExposure / maxScaleMcg) * 100;
+            const purejiBarWidth = (purejiLeadExposure / maxScaleMcg) * 100;
+            const prop65LinePercent = (prop65Limit / maxScaleMcg) * 100;
+
+            // Update Bars
+            document.getElementById('calc-typical-bar').style.width = `${typicalBarWidth}%`;
+            document.getElementById('calc-pureji-bar').style.width = `${purejiBarWidth}%`;
+            
+            // Adjust the dashed visual line representing Prop 65 threshold on both bars
+            document.getElementById('calc-prop65-line-typical').style.left = `${prop65LinePercent}%`;
+            document.getElementById('calc-prop65-line-pureji').style.left = `${prop65LinePercent}%`;
+
+            // Update safety multiplier text
+            const safetyFactor = typicalLeadExposure / purejiLeadExposure;
+            const timesBelow = prop65Limit / purejiLeadExposure;
+            document.getElementById('calc-pureji-safety-factor').textContent = `${timesBelow.toFixed(1)}x below Prop 65 threshold`;
+
+            // Dynamic recommendation boxes and warning states
+            const box = document.getElementById('calc-recommendation-box');
+            const icon = document.getElementById('calc-recommendation-icon');
+            const title = document.getElementById('calc-recommendation-title');
+            const desc = document.getElementById('calc-recommendation-desc');
+
+            if (typicalLeadExposure > prop65Limit) {
+                box.className = "p-5 rounded-xl border border-red-200 bg-red-50 text-red-900 flex items-start gap-4 transition-all duration-300";
+                icon.textContent = "⚠️";
+                title.textContent = "Warning: Safety Limits Exceeded";
+                desc.textContent = `At ${grams.toFixed(1)}g daily, typical lowland brands expose you to ${typicalLeadExposure.toFixed(2)} mcg of lead—exceeding the California Prop 65 reproductive safety limit of 0.50 mcg. Pureji keeps you completely safe at just ${purejiLeadExposure.toFixed(3)} mcg.`;
+            } else {
+                box.className = "p-5 rounded-xl border border-brand-matcha/20 bg-brand-matcha/5 text-brand-forest flex items-start gap-4 transition-all duration-300";
+                icon.textContent = "✓";
+                title.textContent = "Pureji Prenatal Defense Intact";
+                desc.textContent = `Your serving size is safe under Prop 65 limits with Pureji (${timesBelow.toFixed(1)}x below the limit). However, typical brands still deliver unnecessary background contaminants. Protect fetal development with zero-compromise purity.`;
+            }
+        }
+
         // Initialize Page
         window.addEventListener('DOMContentLoaded', () => {
             loadFarmsRegistry();
             loadWaitlistCount();
+            runExposureCalculator();
         });
     </script>
 </body>
