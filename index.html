@@ -191,7 +191,7 @@
                         </tbody>
                     </table>
                     <div class="mt-6 p-4 rounded bg-brand-forest/20 border border-brand-forest/40 text-xs text-brand-sage leading-relaxed">
-                        Because matcha involves ingesting the whole leaf, standard lowland brands regularly exceed Prop 65 parameters. Pureji uses Inductively Coupled Plasma Mass Spectrometry (ICP-MS) following FDA EAM Method 4.7 to certify every single tin.
+                        Because matcha involves ingesting the whole leaf, standard lowland brands regularly exceed Prop 65 parameters. Pureji uses Inductively Coupled Plasma Mass Spectrometry (ICP-MS) following FDA Elemental Analysis Manual Method 4.7 to certify that every single tin is safe for prenatal use.
                     </div>
                 </div>
 
@@ -271,12 +271,12 @@
                     <div class="flex items-center justify-between text-[10px] font-mono text-brand-sage pt-2">
                         <span>0.00 mcg</span>
                         <span class="text-brand-cream">-- Prop 65 Threshold (0.50 mcg)</span>
-                        <span id="calc-pureji-safety-factor" class="text-brand-matcha">13.8x below limit</span>
+                        <span id="calc-pureji-safety-factor" class="text-brand-matcha font-bold">13.8x below limit</span>
                     </div>
 
                     <!-- Dynamic Recommendation -->
                     <div id="calc-recommendation-box" class="p-5 rounded-xl border transition-all duration-300 flex items-start gap-4">
-                        <span id="calc-recommendation-icon" class="text-xl">✓</span>
+                        <span id="calc-recommendation-icon" class="text-xl font-bold font-mono text-brand-matcha"></span>
                         <div>
                             <h4 id="calc-recommendation-title" class="text-sm font-mono uppercase font-bold tracking-wider mb-1">Purity Limit Checked</h4>
                             <p id="calc-recommendation-desc" class="text-xs text-brand-sage leading-relaxed">Calculating...</p>
@@ -303,7 +303,6 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <!-- Farm Buttons (Left) -->
                 <div class="lg:col-span-4 flex flex-col gap-3" id="farm-tab-buttons">
-                    <!-- Spinned while loading, then replaced -->
                     <div id="farm-loading" class="text-xs font-mono text-brand-sage uppercase p-4 border border-brand-forest rounded bg-brand-forest/10">
                         Querying Uji Farms Registry database...
                     </div>
@@ -368,9 +367,9 @@
             <!-- Automated Response Display Panel -->
             <div id="mac-success-panel" class="hidden bg-brand-forest/20 border-2 border-brand-matcha/50 rounded-2xl p-8 space-y-6">
                 <div class="flex items-center gap-4 border-b border-brand-forest/60 pb-4">
-                    <span class="w-12 h-12 rounded-full bg-brand-matcha/20 border border-brand-matcha flex items-center justify-center text-xl text-brand-matcha">✓</span>
+                    <span class="w-12 h-12 rounded-full bg-brand-matcha/20 border border-brand-matcha flex items-center justify-center text-xl text-brand-matcha font-bold">OK</span>
                     <div>
-                        <h3 class="font-serif text-2xl font-bold text-brand-cream">Application Submitted & Pending Approval</h3>
+                        <h3 class="font-serif text-2xl font-bold text-brand-cream">Application Submitted and Pending Approval</h3>
                         <p class="text-xs font-mono text-brand-sage">Maternal Advisory Council Intake Processing Sequence Enabled</p>
                     </div>
                 </div>
@@ -426,7 +425,7 @@
                     </div>
                     <!-- Organization / Role -->
                     <div class="space-y-2">
-                        <label class="text-xs font-mono text-brand-sage uppercase tracking-wider" for="mac-role">Organization / Practice & Role</label>
+                        <label class="text-xs font-mono text-brand-sage uppercase tracking-wider" for="mac-role">Organization / Practice and Role</label>
                         <input type="text" id="mac-role" placeholder="Love Child Yoga / Midwife" class="w-full bg-brand-forest/20 border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm">
                     </div>
                 </div>
@@ -447,7 +446,7 @@
                 <div class="flex items-center gap-3 py-2">
                     <input type="checkbox" id="mac-consent" required class="accent-brand-matcha">
                     <label for="mac-consent" class="text-xs text-brand-sage leading-relaxed cursor-pointer">
-                        I agree to complete the Day 14 Sensory Survey and Day 30 Video Consultation in exchange for my complimentary Kit & Lifetime 40% VIP access.
+                        I agree to complete the Day 14 Sensory Survey and Day 30 Video Consultation in exchange for my complimentary Kit and Lifetime 40% VIP access.
                     </label>
                 </div>
 
@@ -456,7 +455,7 @@
 
                 <!-- Submit Button -->
                 <button type="submit" id="mac-submit-btn" class="w-full bg-brand-matcha hover:bg-brand-matcha/95 text-brand-cream font-mono font-bold text-sm tracking-widest uppercase py-4 rounded transition-all duration-300 transform hover:scale-[1.01] flex items-center justify-center gap-2">
-                    Submit Council Application & Activate Onboarding
+                    Submit Council Application and Activate Onboarding
                 </button>
             </form>
         </div>
@@ -478,8 +477,7 @@
 
             <!-- Waitlist Form -->
             <div id="waitlist-success-panel" class="hidden p-6 rounded bg-brand-forest/20 border border-brand-matcha/40 text-center space-y-4">
-                <span class="text-2xl">✓</span>
-                <h3 class="font-serif text-xl font-bold text-brand-cream">Allocation Code Secured</h3>
+                <span class="text-sm font-mono text-brand-matcha font-bold uppercase block">Allocation Code Secured</span>
                 <p class="text-xs font-mono text-brand-sage">Your prenatal waitlist placement is logged. You will be contacted via email when Batch WZ-OB-26A-047B triggers general packaging release.</p>
             </div>
 
@@ -740,12 +738,12 @@
 
             if (typicalLeadExposure > prop65Limit) {
                 box.className = "p-5 rounded-xl border border-red-900/30 bg-red-950/20 text-red-300 flex items-start gap-4 transition-all duration-300";
-                icon.textContent = "⚠️";
+                icon.textContent = "Attention Required";
                 title.textContent = "Warning: Safety Limits Exceeded";
                 desc.textContent = `At ${grams.toFixed(1)}g daily, typical lowland brands expose you to ${typicalLeadExposure.toFixed(2)} mcg of lead—exceeding the California Prop 65 reproductive safety limit of 0.50 mcg. Pureji keeps you completely safe at just ${purejiLeadExposure.toFixed(3)} mcg.`;
             } else {
                 box.className = "p-5 rounded-xl border border-brand-matcha/20 bg-brand-matcha/5 text-brand-forest flex items-start gap-4 transition-all duration-300";
-                icon.textContent = "✓";
+                icon.textContent = "Optimal";
                 title.textContent = "Pureji Prenatal Defense Intact";
                 desc.textContent = `Your serving size is safe under Prop 65 limits with Pureji (${timesBelow.toFixed(1)}x below the limit). However, typical brands still deliver unnecessary background contaminants. Protect fetal development with zero-compromise purity.`;
             }
@@ -881,7 +879,7 @@
                 errorDiv.textContent = `Submission Error: ${error.message || 'Server timeout. Please verify parameters and re-submit.'}`;
                 errorDiv.classList.remove('hidden');
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit Council Application & Activate Onboarding';
+                submitBtn.textContent = 'Submit Council Application and Activate Onboarding';
             }
         }
 
@@ -891,7 +889,7 @@
             document.getElementById('mac-success-panel').classList.add('hidden');
             const submitBtn = document.getElementById('mac-submit-btn');
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Submit Council Application & Activate Onboarding';
+            submitBtn.textContent = 'Submit Council Application and Activate Onboarding';
         }
 
         // Waitlist submission controls
