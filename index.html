@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pureji | Premium Certified Heavy-Metal-Free Prenatal Matcha</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="The certified safe, triple-screened prenatal matcha. Sourced from high-altitude volcanic-soil plots in Kyoto, Japan, and verified with batch-specific ICP-MS laboratory reports.">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -17,20 +20,17 @@
                     colors: {
                         brand: {
                             forest: '#1E3020',
-                            cream: '#FBFBF9',
                             matcha: '#4C803B',
                             sage: '#7A9A82',
-                            gold: '#b8956a',
-                            darkGold: '#a38055',
-                            lightGold: '#ebd2b0',
-                            charcoal: '#121411',
-                            grey: '#8C908A'
+                            cream: '#FBFBF9',
+                            dark: '#121411',
+                            accent: '#b8956a',
                         }
                     },
                     fontFamily: {
                         serif: ['"Cormorant Garamond"', 'serif'],
                         sans: ['"Inter"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace']
+                        mono: ['"JetBrains Mono"', 'monospace'],
                     }
                 }
             }
@@ -38,877 +38,708 @@
     </script>
     <style>
         .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
-            height: 4px;
+            width: 6px;
+            height: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: #1E3020;
+            background: #121411;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #b8956a;
-            border-radius: 2px;
+            background: #4C803B;
+            border-radius: 3px;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(76, 128, 59, 0.3);
         }
     </style>
 </head>
-<body class="bg-brand-cream text-brand-charcoal font-sans antialiased">
+<body class="bg-brand-dark text-brand-cream font-sans selection:bg-brand-matcha selection:text-white overflow-x-hidden">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-brand-forest text-brand-cream text-xs tracking-widest text-center py-2.5 px-4 font-mono uppercase border-b border-brand-gold/20">
+    <!-- Top Alert Bar -->
+    <div class="bg-brand-forest border-b border-brand-matcha/20 text-center py-2 px-4 text-xs font-mono tracking-wider text-brand-sage uppercase">
         Certified Heavy-Metal-Free | 50x Safer Than California Prop 65 Limits
     </div>
 
-    <!-- Navigation -->
-    <header class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-forest/5 py-4 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="#hero" class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full bg-brand-forest flex items-center justify-center text-brand-cream font-serif font-bold text-lg border border-brand-gold/30">P</div>
-                <span class="font-serif text-2xl font-bold tracking-tight text-brand-forest">Pureji</span>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-forest/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <span class="w-10 h-10 rounded-full bg-brand-forest border border-brand-matcha flex items-center justify-center font-serif text-xl font-bold text-brand-cream group-hover:bg-brand-matcha transition-colors">P</span>
+                <span class="font-serif text-2xl font-bold tracking-wider text-brand-cream group-hover:text-brand-accent transition-colors">PUREJI</span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-brand-forest/80 uppercase">
-                <a href="#purity" class="hover:text-brand-matcha transition-colors">The Standard</a>
-                <a href="#calculator" class="hover:text-brand-matcha transition-colors">Exposure Calc</a>
-                <a href="#terroir" class="hover:text-brand-matcha transition-colors">Our Farms</a>
-                <a href="#verification" class="hover:text-brand-matcha transition-colors">Batch Lookup</a>
-                <a href="#council" class="hover:text-brand-matcha transition-colors">Advisory Council</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-mono tracking-widest text-brand-sage uppercase">
+                <a href="#standards" class="hover:text-brand-cream transition-colors">Standards</a>
+                <a href="#calculator" class="hover:text-brand-cream transition-colors">Exposure Calculator</a>
+                <a href="#terroir" class="hover:text-brand-cream transition-colors">Kyoto Sourcing</a>
+                <a href="#verification" class="hover:text-brand-cream transition-colors">Batch Sandbox</a>
+                <a href="#council-registration" class="hover:text-brand-cream transition-colors">Advisory Council</a>
             </nav>
-            <div>
-                <a href="#allocation" class="inline-flex items-center justify-center px-5 py-2.5 bg-brand-forest hover:bg-brand-matcha text-brand-cream text-xs font-semibold tracking-wider uppercase rounded transition-all shadow-md hover:shadow-brand-matcha/20">
-                    Request Allocation
+            <div class="flex items-center gap-4">
+                <a href="#waitlist-section" class="bg-brand-matcha hover:bg-brand-matcha/80 text-brand-cream text-xs font-mono tracking-widest uppercase px-5 py-3 rounded border border-brand-matcha/40 transition-all duration-300 hover:scale-105">
+                    Reserve Allocation
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative overflow-hidden py-16 md:py-24 px-6 md:px-12 border-b border-brand-forest/5">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            <!-- Hero Left: Branding & Copy -->
-            <div class="lg:col-span-7 flex flex-col justify-center space-y-8">
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-forest/5 text-brand-forest text-xs font-semibold tracking-wider uppercase rounded-full w-fit">
-                    <span class="w-2 h-2 rounded-full bg-brand-matcha animate-pulse"></span>
-                    Now accepting prenatal priority signups
+    <section class="relative min-h-[85vh] flex items-center justify-center py-16 px-6 bg-radial-gradient">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Hero Text -->
+            <div class="lg:col-span-7 space-y-8 text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-forest/60 border border-brand-matcha/30 rounded text-xs font-mono tracking-wider text-brand-accent uppercase">
+                    Now Accepting Maternal Advisory Applications
                 </div>
-                
-                <h1 class="font-serif text-5xl md:text-7xl font-bold tracking-tight text-brand-forest leading-[1.05]">
-                    The certified safe, <br><span class="text-brand-matcha">triple-screened</span> prenatal matcha.
+                <h1 class="font-serif text-5xl md:text-7xl font-bold leading-none tracking-tight text-brand-cream">
+                    The certified safe, <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-matcha to-brand-sage">triple-screened</span> <br>
+                    prenatal matcha.
                 </h1>
-                
-                <p class="text-brand-charcoal/80 text-lg md:text-xl leading-relaxed max-w-2xl">
+                <p class="text-brand-sage text-base md:text-lg max-w-2xl leading-relaxed">
                     Matcha drinkers consume 100% of the raw ground tea leaf, unknowingly ingesting toxic heavy metals. Pureji guarantees certified zero-contaminant, high-altitude Kyoto matcha formulated specifically for maternal peace of mind.
                 </p>
-
-                <!-- Value Matrix Quick Grid -->
-                <div class="grid grid-cols-3 gap-4 py-2">
-                    <div class="p-4 bg-white rounded border border-brand-forest/5 shadow-sm">
-                        <div class="font-mono text-brand-matcha text-xl font-bold">&lt;50 ppb</div>
-                        <div class="text-xs text-brand-grey font-medium uppercase tracking-wider mt-1">Lead Limit</div>
-                    </div>
-                    <div class="p-4 bg-white rounded border border-brand-forest/5 shadow-sm">
-                        <div class="font-mono text-brand-matcha text-xl font-bold">&lt;200 ppb</div>
-                        <div class="text-xs text-brand-grey font-medium uppercase tracking-wider mt-1">Cadmium Limit</div>
-                    </div>
-                    <div class="p-4 bg-white rounded border border-brand-forest/5 shadow-sm">
-                        <div class="font-mono text-brand-matcha text-xl font-bold">100%</div>
-                        <div class="text-xs text-brand-grey font-medium uppercase tracking-wider mt-1">Traceable</div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <a href="#allocation" class="inline-flex items-center justify-center px-8 py-4 bg-brand-forest hover:bg-brand-matcha text-brand-cream text-sm font-semibold tracking-wider uppercase rounded transition-all text-center shadow-lg shadow-brand-forest/10 hover:shadow-brand-matcha/20">
-                        Join Waitlist & Request Allocation
-                    </a>
-                    <a href="#calculator" class="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-brand-cream text-brand-forest border border-brand-forest/15 text-sm font-semibold tracking-wider uppercase rounded transition-all text-center">
-                        Exposure Calculator
-                    </a>
-                </div>
-            </div>
-
-            <!-- Hero Right: Photorealistic Packaging Shot -->
-            <div class="lg:col-span-5 relative">
-                <div class="absolute -inset-4 bg-brand-gold/10 rounded-3xl filter blur-3xl opacity-30 -z-10"></div>
-                <div class="relative bg-white p-4 rounded-2xl shadow-xl border border-brand-forest/5 overflow-hidden">
-                    <img src="images/photorealistic-editorial-product-photogr.png" alt="Pureji Premium Certified Matcha Packaging and Clinical Wellness Aesthetic" class="w-full h-auto rounded-lg object-cover shadow-inner" />
-                    <div class="mt-4 flex items-center justify-between px-2 text-xs font-mono text-brand-grey">
-                        <span>Landed batch: WZ-OB-26A-047B</span>
-                        <span class="text-brand-matcha font-bold">Tested & Released</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Trust Seals & Analytical Badges Section -->
-    <section id="purity" class="py-16 bg-white border-b border-brand-forest/5">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <h2 class="font-serif text-4xl font-bold text-brand-forest tracking-tight">The Pureji Certified Standard</h2>
-                <p class="text-brand-charcoal/70 text-lg">
-                    Traditional green tea is subject to minimal heavy metal guidelines. We reject standard baselines, anchoring our targets on strict California Proposition 65 Maximum Allowable Dose Levels.
-                </p>
-            </div>
-
-            <!-- Graphic Badge Section -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 
-                <!-- SVG/Graphic asset mockup -->
-                <div class="md:col-span-5 flex justify-center">
-                    <div class="bg-brand-cream p-6 rounded-2xl border border-brand-forest/5 max-w-sm w-full shadow-md">
-                        <img src="images/high-fidelity-graphic-design-mockup-of-c.png" alt="Pureji Clinical Safety and Sourcing Badges" class="w-full h-auto rounded-xl shadow-sm" />
-                        <p class="text-center text-xs font-mono text-brand-grey mt-4">Verified Clinical Sourcing & Certification Seals</p>
-                    </div>
-                </div>
-
-                <!-- Comparison Table -->
-                <div class="md:col-span-7 space-y-6">
-                    <h3 class="font-serif text-2xl font-semibold text-brand-forest">Purity Levels vs. Regulation Limits</h3>
-                    
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
-                            <thead>
-                                <tr class="border-b border-brand-forest/10 font-mono text-xs uppercase tracking-wider text-brand-grey">
-                                    <th class="py-3 px-4">Heavy Metal</th>
-                                    <th class="py-3 px-4">Prop 65 daily limit</th>
-                                    <th class="py-3 px-4">Pureji batch limit</th>
-                                    <th class="py-3 px-4 text-right">Purity Factor</th>
-                                </tr>
-                            </thead>
-                            <tbody class="font-sans text-sm divide-y divide-brand-forest/5">
-                                <tr>
-                                    <td class="py-4 px-4 font-semibold text-brand-forest">Lead (Pb)</td>
-                                    <td class="py-4 px-4 font-mono text-brand-charcoal/80">0.50 mcg (250 ppb)</td>
-                                    <td class="py-4 px-4 font-mono text-brand-matcha font-bold">&lt; 50 ppb</td>
-                                    <td class="py-4 px-4 text-right font-mono text-brand-forest font-semibold">5x safer</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-4 px-4 font-semibold text-brand-forest">Cadmium (Cd)</td>
-                                    <td class="py-4 px-4 font-mono text-brand-charcoal/80">4.10 mcg (2,050 ppb)</td>
-                                    <td class="py-4 px-4 font-mono text-brand-matcha font-bold">&lt; 200 ppb</td>
-                                    <td class="py-4 px-4 text-right font-mono text-brand-forest font-semibold">10x safer</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-4 px-4 font-semibold text-brand-forest">Arsenic (As)</td>
-                                    <td class="py-4 px-4 font-mono text-brand-charcoal/80">10.0 mcg (5,000 ppb)</td>
-                                    <td class="py-4 px-4 font-mono text-brand-matcha font-bold">&lt; 100 ppb</td>
-                                    <td class="py-4 px-4 text-right font-mono text-brand-forest font-semibold">50x safer</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-4 px-4 font-semibold text-brand-forest">Mercury (Hg)</td>
-                                    <td class="py-4 px-4 font-mono text-brand-charcoal/80">None established</td>
-                                    <td class="py-4 px-4 font-mono text-brand-matcha font-bold">&lt; 10 ppb</td>
-                                    <td class="py-4 px-4 text-right font-mono text-brand-forest font-semibold">Virtually Zero</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="p-4 bg-brand-cream rounded border border-brand-forest/5 flex gap-4 items-start">
-                        <span class="text-2xl text-brand-matcha mt-0.5">ℹ</span>
-                        <p class="text-xs text-brand-charcoal/70 leading-relaxed">
-                            Because matcha involves ingesting the whole leaf, standard brands regularly exceed Prop 65 safety parameters. Pureji uses Inductively Coupled Plasma Mass Spectrometry (ICP-MS) following FDA Elemental Analysis Manual Method 4.7 to certify that every single tin is safe for prenatal use.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Heavy Metal Threshold Calculator Section -->
-    <section id="calculator" class="py-20 bg-brand-cream border-b border-brand-forest/5">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
-                <div class="font-mono text-xs tracking-wider uppercase text-brand-matcha font-semibold">Prenatal Purity Simulator</div>
-                <h2 class="font-serif text-4xl font-bold text-brand-forest tracking-tight">Heavy Metal Exposure Calculator</h2>
-                <p class="text-brand-charcoal/70 text-lg">
-                    Calculate your exact cumulative daily intake and witness how standard market brands compromise safety limits compared to Pureji.
-                </p>
-            </div>
-
-            <div class="bg-white rounded-2xl border border-brand-forest/10 shadow-xl overflow-hidden max-w-5xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12">
-                    
-                    <!-- Calculator Parameters panel -->
-                    <div class="lg:col-span-5 p-8 bg-brand-forest text-brand-cream flex flex-col justify-between border-r border-brand-forest/20">
-                        <div class="space-y-6">
-                            <h3 class="font-serif text-2xl font-semibold text-brand-gold">Adjust Consumption</h3>
-                            <p class="text-xs text-brand-cream/70 leading-relaxed">
-                                Millennial mothers deserve numerical facts. Standard matcha is often harvested in lowland river basins where lead levels accumulate.
-                            </p>
-                            
-                            <!-- Slider 1: serving weight in grams -->
-                            <div class="space-y-3">
-                                <div class="flex justify-between items-center text-xs font-mono">
-                                    <span class="text-brand-cream/85">Daily Intake (Grams)</span>
-                                    <span class="text-brand-gold font-bold text-sm" id="calc-grams-display">2.0g</span>
-                                </div>
-                                <input type="range" id="calc-grams-slider" min="1.0" max="8.0" step="0.5" value="2.0" oninput="runExposureCalculator()" class="w-full accent-brand-gold bg-brand-cream/20 rounded-lg h-1.5 cursor-pointer">
-                                <div class="flex justify-between text-[10px] text-brand-cream/40 font-mono">
-                                    <span>1.0g (1/2 tsp)</span>
-                                    <span>4.0g (2 tsp)</span>
-                                    <span>8.0g (4 tsp)</span>
-                                </div>
-                            </div>
-
-                            <!-- Infographic Quick reference -->
-                            <div class="space-y-3 pt-4 border-t border-brand-cream/10">
-                                <h4 class="text-xs font-mono text-brand-gold uppercase tracking-wider font-semibold">Under the Microscope</h4>
-                                <div class="space-y-2 text-xs text-brand-cream/80 font-mono">
-                                    <div class="flex justify-between">
-                                        <span>Typical Lowland Brand:</span>
-                                        <span class="text-white font-bold">350 ppb Lead</span>
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <span>Pureji Certified Max:</span>
-                                        <span class="text-brand-gold font-bold">18 ppb Lead</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-6 mt-8 border-t border-brand-cream/10 text-center lg:text-left">
-                            <span class="text-[10px] text-brand-cream/40 font-mono block">Ingestion Metric Equation:</span>
-                            <span class="text-xs text-brand-gold font-mono block mt-1">Exposure (mcg) = Grams &times; (ppb &div; 1,000)</span>
-                        </div>
-                    </div>
-
-                    <!-- Calculator Results Visualization panel -->
-                    <div class="lg:col-span-7 p-8 space-y-8 bg-white">
-                        
-                        <!-- Header & comparison metric -->
-                        <div class="space-y-2">
-                            <h3 class="font-serif text-2xl font-semibold text-brand-forest">Calculated Daily Exposure (Lead)</h3>
-                            <p class="text-xs text-brand-charcoal/60">
-                                Cumulative toxicant exposure is compared directly against the California Prop 65 Reproductive Toxicity Threshold (<span class="font-mono text-brand-forest font-bold">0.50 mcg/day</span>).
-                            </p>
-                        </div>
-
-                        <!-- Exposure Bar Graphs -->
-                        <div class="space-y-6">
-                            
-                            <!-- 1. Typical Lowland Brand Exposure -->
-                            <div class="space-y-2">
-                                <div class="flex items-center justify-between text-xs font-mono">
-                                    <span class="font-semibold text-red-700">Typical Lowland Brand</span>
-                                    <span class="text-red-700 font-bold text-sm" id="calc-typical-exposure">0.70 mcg</span>
-                                </div>
-                                <div class="w-full bg-brand-cream h-4 rounded-full overflow-hidden relative">
-                                    <div class="bg-red-500 h-full transition-all duration-300" style="width: 100%" id="calc-typical-bar"></div>
-                                    <!-- Prop 65 Threshold line indicator -->
-                                    <div class="absolute top-0 bottom-0 border-l-2 border-brand-charcoal/40 border-dashed z-10" style="left: 71.4%" id="calc-prop65-line-typical"></div>
-                                </div>
-                                <div class="flex justify-between text-[9px] text-brand-grey font-mono uppercase">
-                                    <span>0.00 mcg</span>
-                                    <span class="text-brand-charcoal font-bold">↑ Prop 65 reproductive limit (0.50 mcg)</span>
-                                </div>
-                            </div>
-
-                            <!-- 2. Pureji Premium Sourcing Exposure -->
-                            <div class="space-y-2">
-                                <div class="flex items-center justify-between text-xs font-mono">
-                                    <span class="font-semibold text-brand-matcha">Pureji Certified Purity</span>
-                                    <span class="text-brand-matcha font-bold text-sm" id="calc-pureji-exposure">0.036 mcg</span>
-                                </div>
-                                <div class="w-full bg-brand-cream h-4 rounded-full overflow-hidden relative">
-                                    <div class="bg-brand-matcha h-full transition-all duration-300" style="width: 7.2%" id="calc-pureji-bar"></div>
-                                    <!-- Prop 65 Threshold line indicator -->
-                                    <div class="absolute top-0 bottom-0 border-l-2 border-brand-charcoal/40 border-dashed z-10" style="left: 71.4%" id="calc-prop65-line-pureji"></div>
-                                </div>
-                                <div class="flex justify-between text-[9px] text-brand-grey font-mono uppercase">
-                                    <span>0.00 mcg</span>
-                                    <span class="text-brand-matcha font-bold" id="calc-pureji-safety-factor">13.8x below threshold</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- High impact recommendation block based on intake -->
-                        <div class="p-5 rounded-xl border transition-all duration-300 flex items-start gap-4" id="calc-recommendation-box">
-                            <span class="text-3xl" id="calc-recommendation-icon">⚠️</span>
-                            <div class="space-y-1">
-                                <h4 class="font-serif text-lg font-bold" id="calc-recommendation-title">Warning: Limit Exceeded</h4>
-                                <p class="text-xs leading-relaxed text-brand-charcoal/80" id="calc-recommendation-desc">
-                                    Your simulated daily intake exceeds California Prop 65 reproductive toxicity safety limit with standard lowland brands.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Interactive Terroir & Sourcing Selector -->
-    <section id="terroir" class="py-20 bg-brand-cream border-b border-brand-forest/5">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-                <div class="max-w-2xl space-y-4">
-                    <div class="font-mono text-xs tracking-wider uppercase text-brand-matcha font-semibold">Volcanic Sourcing Network</div>
-                    <h2 class="font-serif text-4xl font-bold text-brand-forest tracking-tight">Vetted High-Altitude Kyoto Farms</h2>
-                    <p class="text-brand-charcoal/70">
-                        Steep mountain slopes protect our crops from lowland agricultural runoff. Select an origin partner below to view local geological properties and analytical standards dynamically.
-                    </p>
-                </div>
-                <div class="bg-white px-4 py-2 rounded border border-brand-forest/5 text-xs font-mono text-brand-grey">
-                    Database ID: <span class="text-brand-forest">6292ecbe...ce72</span>
-                </div>
-            </div>
-
-            <!-- Terroir Interactive Telemetry Selector Dashboard -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                
-                <!-- Left panel: Farm Tabs -->
-                <div class="lg:col-span-4 flex flex-col gap-3" id="farm-tab-container">
-                    <!-- Loaded dynamically via loadFarmsRegistry() -->
-                    <div class="p-6 bg-white border border-brand-forest/10 rounded-lg animate-pulse text-center">
-                        <span class="text-sm font-mono text-brand-grey">Loading verified registry data...</span>
-                    </div>
-                </div>
-
-                <!-- Right panel: Terroir Telemetry Viewer Card -->
-                <div class="lg:col-span-8 bg-brand-forest text-brand-cream rounded-xl p-8 md:p-10 shadow-xl border border-brand-gold/20 flex flex-col justify-between" id="telemetry-view-card">
+                <!-- Quick Stats Matrix -->
+                <div class="grid grid-cols-3 gap-4 py-4 border-t border-b border-brand-forest/60">
                     <div>
-                        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-brand-cream/10 pb-6 mb-6">
-                            <div>
-                                <h3 class="font-serif text-3xl font-bold text-brand-gold" id="view-farm-name">Obubu Tea Farm</h3>
-                                <p class="text-sm text-brand-cream/60 mt-1" id="view-region">Wazuka, Kyoto</p>
-                            </div>
-                            <div class="text-right">
-                                <span class="font-mono text-2xl font-bold text-brand-cream" id="view-elevation">500m</span>
-                                <p class="text-[10px] tracking-widest uppercase text-brand-cream/40 mt-1">Average Elevation</p>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div class="space-y-2">
-                                <h4 class="text-xs tracking-wider uppercase text-brand-gold font-semibold font-mono">Geological Soil Profile</h4>
-                                <p class="text-sm text-brand-cream/80 leading-relaxed" id="view-soil">
-                                    Volcanic-ash enriched loam with deep gravelly granite. Excellent drainage and high-altitude micro-climate.
-                                </p>
-                            </div>
-                            <div class="space-y-2">
-                                <h4 class="text-xs tracking-wider uppercase text-brand-gold font-semibold font-mono">Botanical Cultivars</h4>
-                                <p class="text-sm text-brand-cream/80 leading-relaxed" id="view-cultivars">
-                                    Okumidori, Yabukita
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="bg-brand-cream/5 rounded border border-brand-cream/10 p-5">
-                            <div class="flex items-center gap-3 text-brand-gold font-mono text-xs uppercase font-bold tracking-wider mb-2">
-                                <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
-                                Testing Protocols & Sourcing Compliance
-                            </div>
-                            <p class="text-xs text-brand-cream/70 leading-relaxed" id="view-standards">
-                                FDA EAM Method 4.7 (ICP-MS) for ultra-trace heavy metal detection (&lt;50 ppb Lead)
-                            </p>
-                        </div>
+                        <div class="font-mono text-xl md:text-2xl font-bold text-brand-matcha">&lt; 50 ppb</div>
+                        <div class="text-[10px] md:text-xs font-mono text-brand-sage uppercase tracking-wider">Lead Safety Limit</div>
                     </div>
-
-                    <div class="border-t border-brand-cream/10 pt-6 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div class="text-xs font-mono text-brand-cream/50" id="view-contact">
-                            Sourcing: info@obubutea.com
-                        </div>
-                        <a href="#allocation" class="inline-flex items-center gap-2 text-xs font-semibold text-brand-gold uppercase tracking-wider hover:text-brand-cream transition-colors">
-                            Request Batch Sourcing Reserve →
-                        </a>
+                    <div>
+                        <div class="font-mono text-xl md:text-2xl font-bold text-brand-matcha">&lt; 200 ppb</div>
+                        <div class="text-[10px] md:text-xs font-mono text-brand-sage uppercase tracking-wider">Cadmium Limit</div>
+                    </div>
+                    <div>
+                        <div class="font-mono text-xl md:text-2xl font-bold text-brand-matcha">100%</div>
+                        <div class="text-[10px] md:text-xs font-mono text-brand-sage uppercase tracking-wider">Batch Traceable</div>
                     </div>
                 </div>
 
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#council-registration" class="bg-brand-cream text-brand-dark hover:bg-brand-accent hover:text-brand-dark font-mono text-sm tracking-widest uppercase px-8 py-4 rounded text-center font-bold transition-all duration-300">
+                        Apply to Join MAC Council
+                    </a>
+                    <a href="#waitlist-section" class="border border-brand-forest hover:border-brand-matcha text-brand-cream font-mono text-sm tracking-widest uppercase px-8 py-4 rounded text-center transition-all duration-300">
+                        Join Waitlist
+                    </a>
+                </div>
             </div>
 
+            <!-- Hero Image -->
+            <div class="lg:col-span-5 relative flex justify-center">
+                <div class="relative w-full max-w-md rounded-2xl overflow-hidden border border-brand-forest/80 shadow-2xl bg-brand-forest/10 p-2">
+                    <img src="images/photorealistic-editorial-product-photogr.png" alt="Pureji Premium Certified Matcha Packaging and Clinical Wellness Aesthetic" class="w-full object-cover rounded-xl shadow-inner">
+                    <div class="absolute bottom-4 left-4 right-4 bg-brand-dark/90 backdrop-blur-md p-4 rounded-xl border border-brand-matcha/30">
+                        <div class="flex items-center justify-between text-xs font-mono text-brand-sage">
+                            <span>Landed Batch: WZ-OB-26A-047B</span>
+                            <span class="text-brand-matcha font-bold">Tested & Released</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Batch Verification Sandbox (QR Lookup) -->
-    <section id="verification" class="py-20 bg-white border-b border-brand-forest/5">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            
-            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
-                <div class="font-mono text-xs tracking-wider uppercase text-brand-matcha font-semibold">Active Audit Registry</div>
-                <h2 class="font-serif text-4xl font-bold text-brand-forest tracking-tight">Batch-to-Tin (BTSN) Verification</h2>
-                <p class="text-brand-charcoal/70">
-                    To maintain radical transparency, copy any active serial number below and paste it into the sandbox to dynamically analyze localized ICP-MS heavy-metal verification bars.
+    <!-- Standards & Matrix Section -->
+    <section id="standards" class="py-24 px-6 border-t border-brand-forest/40 bg-brand-dark/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto space-y-6 mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold">The Pureji Certified Standard</h2>
+                <div class="w-16 h-1 bg-brand-matcha mx-auto rounded"></div>
+                <p class="text-brand-sage leading-relaxed text-sm md:text-base">
+                    Traditional green tea is subject to minimal heavy metal guidelines. We reject standard baselines, anchoring our targets on strict California Proposition 65 Maximum Allowable Dose Levels (MADL).
                 </p>
-                
-                <!-- Demo serials -->
-                <div class="flex flex-wrap justify-center gap-2 pt-2">
-                    <button onclick="applyBatchCode('WZ-OB-26A-047B')" class="px-3 py-1 bg-brand-cream hover:bg-brand-forest hover:text-brand-cream text-brand-forest text-xs font-mono rounded border border-brand-forest/10 transition-colors">WZ-OB-26A-047B</button>
-                    <button onclick="applyBatchCode('WZ-HR-26A-012A')" class="px-3 py-1 bg-brand-cream hover:bg-brand-forest hover:text-brand-cream text-brand-forest text-xs font-mono rounded border border-brand-forest/10 transition-colors">WZ-HR-26A-012A</button>
-                    <button onclick="applyBatchCode('WZ-KK-26A-033D')" class="px-3 py-1 bg-brand-cream hover:bg-brand-forest hover:text-brand-cream text-brand-forest text-xs font-mono rounded border border-brand-forest/10 transition-colors">WZ-KK-26A-033D</button>
-                </div>
             </div>
 
-            <!-- Verification Sandbox Widget -->
-            <div class="max-w-4xl mx-auto bg-brand-cream rounded-2xl border border-brand-forest/10 shadow-lg p-6 md:p-10">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                    
-                    <!-- Form Input -->
-                    <div class="md:col-span-5 space-y-4">
-                        <label class="block text-xs font-mono uppercase tracking-wider text-brand-grey">Enter Tin Serial Number</label>
-                        <div class="relative">
-                            <input type="text" id="btsn-input" placeholder="e.g. WZ-OB-26A-047B" class="w-full px-4 py-3 bg-white border border-brand-forest/15 rounded text-sm font-mono tracking-wider text-brand-forest focus:outline-none focus:ring-2 focus:ring-brand-matcha focus:border-transparent">
-                            <div class="absolute right-2.5 top-2.5">
-                                <span class="w-2.5 h-2.5 rounded-full bg-brand-matcha inline-block animate-pulse"></span>
-                            </div>
-                        </div>
-                        <button onclick="lookupBatchTelemetry()" class="w-full py-3 bg-brand-forest hover:bg-brand-matcha text-brand-cream font-semibold text-xs tracking-wider uppercase rounded transition-colors shadow-md">
-                            Verify Heavy-Metal Purity
-                        </button>
-                        <p class="text-[11px] text-brand-grey text-center">
-                            Standard: FDA EAM Method 4.7 ICP-MS | Third-Party: Eurofins USA
-                        </p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Comparison Table -->
+                <div class="lg:col-span-7 overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-left font-mono text-xs md:text-sm border-collapse">
+                        <thead>
+                            <tr class="border-b border-brand-forest text-brand-sage uppercase tracking-wider">
+                                <th class="pb-4">Heavy Metal</th>
+                                <th class="pb-4 text-right">Prop 65 Ingestion Limit</th>
+                                <th class="pb-4 text-right">Pureji Batch Limit</th>
+                                <th class="pb-4 text-right text-brand-matcha">Purity Factor</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-brand-forest/40">
+                            <tr class="hover:bg-brand-forest/10 transition-colors">
+                                <td class="py-4 font-bold text-brand-cream">Lead (Pb)</td>
+                                <td class="py-4 text-right">0.50 mcg (<span class="text-brand-sage">250 ppb</span>)</td>
+                                <td class="py-4 text-right text-brand-cream">&lt; 50 ppb</td>
+                                <td class="py-4 text-right text-brand-matcha font-bold">5x Safer</td>
+                            </tr>
+                            <tr class="hover:bg-brand-forest/10 transition-colors">
+                                <td class="py-4 font-bold text-brand-cream">Cadmium (Cd)</td>
+                                <td class="py-4 text-right">4.10 mcg (<span class="text-brand-sage">2,050 ppb</span>)</td>
+                                <td class="py-4 text-right text-brand-cream">&lt; 200 ppb</td>
+                                <td class="py-4 text-right text-brand-matcha font-bold">10x Safer</td>
+                            </tr>
+                            <tr class="hover:bg-brand-forest/10 transition-colors">
+                                <td class="py-4 font-bold text-brand-cream">Arsenic (As)</td>
+                                <td class="py-4 text-right">10.0 mcg (<span class="text-brand-sage">5,000 ppb</span>)</td>
+                                <td class="py-4 text-right text-brand-cream">&lt; 100 ppb</td>
+                                <td class="py-4 text-right text-brand-matcha font-bold">50x Safer</td>
+                            </tr>
+                            <tr class="hover:bg-brand-forest/10 transition-colors">
+                                <td class="py-4 font-bold text-brand-cream">Mercury (Hg)</td>
+                                <td class="py-4 text-right text-brand-sage">No limit established</td>
+                                <td class="py-4 text-right text-brand-cream">&lt; 10 ppb</td>
+                                <td class="py-4 text-right text-brand-matcha font-bold">Virtually Zero</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mt-6 p-4 rounded bg-brand-forest/20 border border-brand-forest/40 text-xs text-brand-sage leading-relaxed">
+                        Because matcha involves ingesting the whole leaf, standard lowland brands regularly exceed Prop 65 parameters. Pureji uses Inductively Coupled Plasma Mass Spectrometry (ICP-MS) following FDA EAM Method 4.7 to certify every single tin.
                     </div>
+                </div>
 
-                    <!-- Sandbox Output Dashboard -->
-                    <div class="md:col-span-7 bg-white p-6 rounded-xl border border-brand-forest/5 shadow-inner space-y-6">
-                        
-                        <div class="flex items-center justify-between border-b border-brand-forest/5 pb-4">
-                            <div>
-                                <span class="text-[10px] tracking-wider uppercase text-brand-grey font-mono block">Certificate Status</span>
-                                <h4 class="font-serif text-lg font-bold text-brand-forest" id="output-farm-name">Obubu Tea Farm Micro-Lot</h4>
-                            </div>
-                            <span class="px-2.5 py-1 bg-brand-matcha/10 text-brand-matcha text-xs font-mono uppercase font-bold rounded" id="output-release-status">Approved</span>
-                        </div>
-
-                        <!-- Progress Bar Lead -->
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between text-xs font-mono">
-                                <span class="font-semibold text-brand-forest">Lead (Pb) Level</span>
-                                <span class="text-brand-matcha font-bold" id="lead-value">18 ppb</span>
-                            </div>
-                            <div class="w-full bg-brand-cream h-2.5 rounded-full overflow-hidden">
-                                <div class="bg-brand-matcha h-full transition-all duration-500" style="width: 7.2%" id="lead-bar"></div>
-                            </div>
-                            <div class="flex justify-between text-[9px] text-brand-grey font-mono uppercase">
-                                <span>Pureji Limit: 50 ppb</span>
-                                <span>Prop 65 Ingestion Limit: 250 ppb</span>
-                            </div>
-                        </div>
-
-                        <!-- Progress Bar Cadmium -->
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between text-xs font-mono">
-                                <span class="font-semibold text-brand-forest">Cadmium (Cd) Level</span>
-                                <span class="text-brand-matcha font-bold" id="cadmium-value">65 ppb</span>
-                            </div>
-                            <div class="w-full bg-brand-cream h-2.5 rounded-full overflow-hidden">
-                                <div class="bg-brand-matcha h-full transition-all duration-500" style="width: 3.1%" id="cadmium-bar"></div>
-                            </div>
-                            <div class="flex justify-between text-[9px] text-brand-grey font-mono uppercase">
-                                <span>Pureji Limit: 200 ppb</span>
-                                <span>Prop 65 Ingestion Limit: 2050 ppb</span>
-                            </div>
-                        </div>
-
-                        <!-- Certification Code info footer -->
-                        <div class="flex items-center justify-between text-[11px] text-brand-grey font-mono pt-2 border-t border-brand-forest/5">
-                            <span>Lab Report ID: <span id="output-report-id">EF-90312-PB</span></span>
-                            <span>Method: <span class="text-brand-forest font-semibold">FDA ICP-MS</span></span>
-                        </div>
-
+                <!-- Graphic & Seals -->
+                <div class="lg:col-span-5 flex flex-col items-center">
+                    <div class="border border-brand-forest/80 rounded-2xl overflow-hidden p-2 bg-brand-forest/10 w-full max-w-sm">
+                        <img src="images/high-fidelity-graphic-design-mockup-of-c.png" alt="Pureji Certified Purity Seals and Clinical Markers" class="w-full object-cover rounded-xl shadow-lg">
                     </div>
-
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Priority Waitlist Form Section -->
-    <section id="allocation" class="py-24 bg-brand-forest text-brand-cream relative overflow-hidden">
-        <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-brand-matcha/10 filter blur-3xl"></div>
-        <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-brand-gold/5 filter blur-3xl"></div>
-
-        <div class="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+    <!-- Heavy Metal Exposure Calculator -->
+    <section id="calculator" class="py-24 px-6 bg-brand-forest/10 border-t border-brand-forest/40">
+        <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Allocation Copy -->
-                <div class="lg:col-span-6 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-gold/15 text-brand-gold text-xs font-mono uppercase rounded-full">
-                        Secure Spring 2026 First Flush
+                <!-- Calculator Controls -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-forest/60 border border-brand-matcha/30 rounded text-xs font-mono tracking-wider text-brand-accent uppercase">
+                        Prenatal Purity Simulator
                     </div>
-                    <h2 class="font-serif text-5xl md:text-6xl font-bold tracking-tight text-brand-cream leading-[1.1]">
-                        Join the Maternal Advisory Council & Priority List
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold leading-tight text-brand-cream">
+                        Heavy Metal <br>Exposure Calculator
                     </h2>
-                    <p class="text-brand-cream/80 text-lg leading-relaxed">
-                        To support our seed launch and allocate the initial small-batch volcanic harvests, we are onboarding health-conscious pregnant, nursing, or postpartum mothers. Secure a premium, certified-safe ritual before public reserves release.
+                    <p class="text-brand-sage text-sm leading-relaxed">
+                        Calculate your exact cumulative daily intake and witness how standard lowland market brands compromise safety limits compared to Pureji's high-altitude crops.
                     </p>
                     
-                    <div class="space-y-4 pt-4 border-t border-brand-cream/10">
-                        <div class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-brand-gold flex items-center justify-center text-brand-forest text-xs font-bold">✓</span>
-                            <span class="text-sm text-brand-cream/95 font-medium">Complimentary Clinical Sourcing Kit ($75 Retail Value)</span>
+                    <div class="space-y-4 pt-4">
+                        <div class="flex justify-between items-center">
+                            <label for="calc-grams-slider" class="text-sm font-mono text-brand-sage uppercase tracking-wider">Daily Intake (Grams)</label>
+                            <span id="calc-grams-display" class="font-mono text-lg font-bold text-brand-matcha">2.0g</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-brand-gold flex items-center justify-center text-brand-forest text-xs font-bold">✓</span>
-                            <span class="text-sm text-brand-cream/95 font-medium">Lifetime 40% VIP Subscription Discount ($34.80 for life)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-brand-gold flex items-center justify-center text-brand-forest text-xs font-bold">✓</span>
-                            <span class="text-sm text-brand-cream/95 font-medium">Direct live API-driven Eurofins Laboratory validation</span>
+                        <input type="range" id="calc-grams-slider" min="1.0" max="8.0" step="0.5" value="2.0" class="w-full accent-brand-matcha bg-brand-forest/60 rounded-lg cursor-pointer h-2" oninput="runExposureCalculator()">
+                        <div class="flex justify-between text-[10px] font-mono text-brand-sage">
+                            <span>1.0g (1/2 tsp)</span>
+                            <span>4.0g (2 tsp)</span>
+                            <span>8.0g (4 tsp)</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Live Allocation Sign up Card Form -->
-                <div class="lg:col-span-6 bg-white text-brand-charcoal p-8 md:p-10 rounded-2xl shadow-2xl border border-brand-gold/20" id="council">
-                    <div class="flex items-center justify-between border-b border-brand-forest/5 pb-6 mb-6">
-                        <h3 class="font-serif text-2xl font-bold text-brand-forest">Reserve Allocation</h3>
-                        <div class="bg-brand-matcha/10 px-3 py-1 rounded text-xs font-mono text-brand-matcha font-bold">
-                            <span id="waitlist-counter">...</span> Active Spots
+                <!-- Live Feed & Metrics Output -->
+                <div class="lg:col-span-7 bg-brand-dark/90 rounded-2xl border border-brand-forest p-6 md:p-8 space-y-6">
+                    <div class="flex items-center justify-between border-b border-brand-forest/60 pb-4">
+                        <span class="text-xs font-mono text-brand-sage uppercase tracking-wider">Calculated Daily Exposure (Lead)</span>
+                        <span class="text-xs font-mono text-brand-accent uppercase tracking-wider">Limit: 0.50 mcg</span>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Typical Brand -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-mono">
+                                <span class="text-brand-sage">Typical Lowland Brand (350 ppb)</span>
+                                <span id="calc-typical-exposure" class="font-bold text-brand-cream">0.700 mcg</span>
+                            </div>
+                            <div class="relative w-full h-4 bg-brand-forest/20 rounded border border-brand-forest/30 overflow-hidden">
+                                <div id="calc-typical-bar" class="h-full bg-red-800/80 transition-all duration-300" style="width: 140%;"></div>
+                                <div id="calc-prop65-line-typical" class="absolute top-0 bottom-0 border-l border-dashed border-brand-cream/60 transition-all duration-300" style="left: 71.4%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Pureji Brand -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-mono">
+                                <span class="text-brand-matcha font-bold">Pureji High-Altitude Sourced (18 ppb)</span>
+                                <span id="calc-pureji-exposure" class="font-bold text-brand-matcha">0.036 mcg</span>
+                            </div>
+                            <div class="relative w-full h-4 bg-brand-forest/20 rounded border border-brand-forest/30 overflow-hidden">
+                                <div id="calc-pureji-bar" class="h-full bg-brand-matcha/80 transition-all duration-300" style="width: 7.2%;"></div>
+                                <div id="calc-prop65-line-pureji" class="absolute top-0 bottom-0 border-l border-dashed border-brand-cream/60 transition-all duration-300" style="left: 71.4%;"></div>
+                            </div>
                         </div>
                     </div>
 
-                    <form id="waitlist-form" onsubmit="submitWaitlist(event)" class="space-y-5">
-                        <div class="space-y-2">
-                            <label class="block text-xs font-mono uppercase tracking-wider text-brand-grey font-semibold">Your Full Name</label>
-                            <input type="text" id="form-name" required placeholder="Sarah Jenkins" class="w-full px-4 py-3 bg-brand-cream/50 border border-brand-forest/10 rounded focus:outline-none focus:ring-2 focus:ring-brand-matcha text-sm text-brand-forest">
-                        </div>
-                        
-                        <div class="space-y-2">
-                            <label class="block text-xs font-mono uppercase tracking-wider text-brand-grey font-semibold">Email Address</label>
-                            <input type="email" id="form-email" required placeholder="sarah@example.com" class="w-full px-4 py-3 bg-brand-cream/50 border border-brand-forest/10 rounded focus:outline-none focus:ring-2 focus:ring-brand-matcha text-sm text-brand-forest">
-                        </div>
-
-                        <div class="space-y-2">
-                            <label class="block text-xs font-mono uppercase tracking-wider text-brand-grey font-semibold">Current Maternal Status</label>
-                            <select id="form-status" required class="w-full px-4 py-3 bg-brand-cream/50 border border-brand-forest/10 rounded focus:outline-none focus:ring-2 focus:ring-brand-matcha text-sm text-brand-forest">
-                                <option value="Prenatal / Pregnant">Pregnant (First/Second Trimester)</option>
-                                <option value="Prenatal / Third Trimester">Pregnant (Third Trimester)</option>
-                                <option value="Postnatal / Breastfeeding">Postpartum (Breastfeeding)</option>
-                                <option value="Postnatal / Standard">Postpartum (Standard)</option>
-                                <option value="Maternal Practitioner">Healthcare / Maternal Practitioner (Doula, Midwife, NP)</option>
-                                <option value="General Health Advocate">General Health/Purity Advocate</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="w-full py-4 bg-brand-forest hover:bg-brand-matcha text-brand-cream font-semibold tracking-wider text-xs uppercase rounded transition-colors shadow-lg">
-                            Submit Advisory Application
-                        </button>
-                    </form>
-
-                    <!-- Success State -->
-                    <div id="waitlist-success" class="hidden text-center space-y-4 py-8">
-                        <div class="w-16 h-16 rounded-full bg-brand-matcha/10 flex items-center justify-center mx-auto">
-                            <span class="text-3xl text-brand-matcha">✓</span>
-                        </div>
-                        <h4 class="font-serif text-2xl font-bold text-brand-forest">Reserved successfully</h4>
-                        <p class="text-sm text-brand-charcoal/70 leading-relaxed max-w-sm mx-auto">
-                            Thank you for joining. Our Sourcing Team has registered your priority allocation. A personalized invitation card containing onboarding telemetry details will land in your inbox shortly.
-                        </p>
+                    <div class="flex items-center justify-between text-[10px] font-mono text-brand-sage pt-2">
+                        <span>0.00 mcg</span>
+                        <span class="text-brand-cream">-- Prop 65 Threshold (0.50 mcg)</span>
+                        <span id="calc-pureji-safety-factor" class="text-brand-matcha">13.8x below limit</span>
                     </div>
 
+                    <!-- Dynamic Recommendation -->
+                    <div id="calc-recommendation-box" class="p-5 rounded-xl border transition-all duration-300 flex items-start gap-4">
+                        <span id="calc-recommendation-icon" class="text-xl">✓</span>
+                        <div>
+                            <h4 id="calc-recommendation-title" class="text-sm font-mono uppercase font-bold tracking-wider mb-1">Purity Limit Checked</h4>
+                            <p id="calc-recommendation-desc" class="text-xs text-brand-sage leading-relaxed">Calculating...</p>
+                        </div>
+                    </div>
                 </div>
-
             </div>
+        </div>
+    </section>
+
+    <!-- Volcanic Sourcing Network -->
+    <section id="terroir" class="py-24 px-6 border-t border-brand-forest/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto space-y-6 mb-16">
+                <span class="text-xs font-mono text-brand-accent uppercase tracking-wider">Volcanic Sourcing Network</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-cream">Vetted High-Altitude Kyoto Farms</h2>
+                <div class="w-16 h-1 bg-brand-matcha mx-auto rounded"></div>
+                <p class="text-brand-sage leading-relaxed text-sm md:text-base">
+                    Steep mountain slopes protect crops from lowland agricultural runoff. Select an origin partner below to view geological properties, cultivars, and certified laboratory parameters.
+                </p>
+            </div>
+
+            <!-- Dynamic Tab Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Farm Buttons (Left) -->
+                <div class="lg:col-span-4 flex flex-col gap-3" id="farm-tab-buttons">
+                    <!-- Spinned while loading, then replaced -->
+                    <div id="farm-loading" class="text-xs font-mono text-brand-sage uppercase p-4 border border-brand-forest rounded bg-brand-forest/10">
+                        Querying Uji Farms Registry database...
+                    </div>
+                </div>
+
+                <!-- Selected Farm Display (Right) -->
+                <div class="lg:col-span-8 bg-brand-forest/10 border border-brand-forest/60 rounded-2xl p-6 md:p-8 space-y-6" id="farm-tab-content">
+                    <p class="text-brand-sage font-mono text-xs">Select a farm to view sourcing profile...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Batch-to-Tin (BTSN) Verification Sandbox -->
+    <section id="verification" class="py-24 px-6 bg-brand-dark/90 border-t border-brand-forest/40">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="text-center max-w-3xl mx-auto space-y-6">
+                <span class="text-xs font-mono text-brand-accent uppercase tracking-wider">Active Audit Registry</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold">Batch-to-Tin (BTSN) Verification</h2>
+                <div class="w-16 h-1 bg-brand-matcha mx-auto rounded"></div>
+                <p class="text-brand-sage text-sm md:text-base leading-relaxed">
+                    To maintain radical transparency, choose or search a batch code below to dynamically load independent third-party laboratory ICP-MS heavy-metal verification bars.
+                </p>
+            </div>
+
+            <!-- Pre-vetted Batch Badges -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="setBTSN('WZ-OB-26A-047B')" class="px-4 py-2 rounded bg-brand-forest/40 border border-brand-matcha/30 hover:border-brand-matcha text-xs font-mono tracking-wider text-brand-cream hover:bg-brand-forest/60 transition-all">WZ-OB-26A-047B</button>
+                <button onclick="setBTSN('WZ-HR-26A-012A')" class="px-4 py-2 rounded bg-brand-forest/40 border border-brand-matcha/30 hover:border-brand-matcha text-xs font-mono tracking-wider text-brand-cream hover:bg-brand-forest/60 transition-all">WZ-HR-26A-012A</button>
+                <button onclick="setBTSN('WZ-KK-26A-033D')" class="px-4 py-2 rounded bg-brand-forest/40 border border-brand-matcha/30 hover:border-brand-matcha text-xs font-mono tracking-wider text-brand-cream hover:bg-brand-forest/60 transition-all">WZ-KK-26A-033D</button>
+            </div>
+
+            <!-- Search Panel -->
+            <div class="max-w-xl mx-auto">
+                <div class="flex gap-2 p-1.5 bg-brand-forest/20 rounded-lg border border-brand-forest">
+                    <input type="text" id="btsn-input" placeholder="Enter Tin Serial Number (BTSN)..." value="WZ-OB-26A-047B" class="flex-grow bg-transparent border-none text-brand-cream font-mono text-sm px-4 focus:outline-none placeholder:text-brand-sage">
+                    <button onclick="runVerification()" class="bg-brand-matcha hover:bg-brand-matcha/80 px-6 py-3 rounded font-mono text-xs tracking-wider uppercase text-brand-cream transition-colors font-bold">Verify Purity</button>
+                </div>
+            </div>
+
+            <!-- Verification Sandbox Result Card -->
+            <div id="btsn-result-card" class="max-w-3xl mx-auto bg-brand-forest/5 border border-brand-forest/60 rounded-2xl p-6 md:p-8 space-y-6">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Maternal Advisory Council (MAC) Application Form (LOAD-BEARING ASSIGNMENT) -->
+    <section id="council-registration" class="py-24 px-6 border-t border-brand-forest/40 bg-radial-gradient">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center space-y-6 mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-forest/60 border border-brand-matcha/30 rounded text-xs font-mono tracking-wider text-brand-accent uppercase">
+                    Maternal Advisory Council Onboarding
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold">Advisory Council Application</h2>
+                <div class="w-16 h-1 bg-brand-matcha mx-auto rounded"></div>
+                <p class="text-brand-sage text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                    We are onboarding exactly 20 elite birth workers, midwives, prenatal trainers, and wellness-focused mothers to our Founding Maternal Advisory Council. Receive a complimentary Clinical Sourcing Kit and lifetime 40% VIP discount in exchange for your honest feedback.
+                </p>
+            </div>
+
+            <!-- Automated Response Display Panel -->
+            <div id="mac-success-panel" class="hidden bg-brand-forest/20 border-2 border-brand-matcha/50 rounded-2xl p-8 space-y-6">
+                <div class="flex items-center gap-4 border-b border-brand-forest/60 pb-4">
+                    <span class="w-12 h-12 rounded-full bg-brand-matcha/20 border border-brand-matcha flex items-center justify-center text-xl text-brand-matcha">✓</span>
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-cream">Application Submitted & Pending Approval</h3>
+                        <p class="text-xs font-mono text-brand-sage">Maternal Advisory Council Intake Processing Sequence Enabled</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 font-mono text-xs text-brand-cream">
+                    <p class="text-brand-accent font-bold uppercase tracking-wider">Automated Welcome Response Dispatch:</p>
+                    <div class="p-5 rounded bg-brand-dark/90 border border-brand-forest/80 text-brand-sage leading-relaxed space-y-4">
+                        <p><strong>Subject:</strong> Confirming your Pureji Maternal Advisory Council kit shipment</p>
+                        <p>Dear <span id="welcome-name" class="text-brand-cream font-bold">Applicant</span>,</p>
+                        <p>Thank you for confirming your interest in joining the founding circle of the Pureji Maternal Advisory Council. We are honored to have your clinical and holistic perspective guiding our maternal safety mission.</p>
+                        <p>Before we dispatch your customized Clinical Sourcing Kit from our California warehouse, please prepare to complete these final two onboarding steps:</p>
+                        <ol class="list-decimal list-inside space-y-2 mt-2">
+                            <li><strong>DIGITAL ADVISOR AGREEMENT:</strong> We will send our Founding Advisor Agreement to your email. This secures your lifetime 40% VIP subscription discount.</li>
+                            <li><strong>SHIPPING COORDINATES:</strong> We have logged your physical address for Priority Courier Delivery.</li>
+                        </ol>
+                        <p>Your kit contains a 30g tin of first-flush, single-origin ceremonial matcha from Wazuka, Kyoto, a traditional bamboo whisk, and a 100ml laboratory graduated beaker. Your specific micro-lot registers lead levels safely below 50 ppb.</p>
+                        <p class="mt-4">In health and purity,</p>
+                        <p><strong>Jef Roykin</strong><br>Sourcing & Operations, Pureji<br><span class="text-brand-accent">jefroykin@gmail.com</span></p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center pt-4">
+                    <button onclick="resetMacForm()" class="px-6 py-3 border border-brand-forest hover:border-brand-matcha font-mono text-xs tracking-wider uppercase rounded transition-colors text-brand-sage hover:text-brand-cream">Submit Another Application</button>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <form id="mac-form" onsubmit="submitMacApplication(event)" class="space-y-6 bg-brand-dark/90 border border-brand-forest p-8 rounded-2xl relative">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Full Name -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-mono text-brand-sage uppercase tracking-wider" for="mac-name">Full Name *</label>
+                        <input type="text" id="mac-name" required placeholder="Dr. Sarah Jenkins" class="w-full bg-brand-forest/20 border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm">
+                    </div>
+                    <!-- Email -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-mono text-brand-sage uppercase tracking-wider" for="mac-email">Email Address *</label>
+                        <input type="email" id="mac-email" required placeholder="sarah@parentingadvocate.org" class="w-full bg-brand-forest/20 border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Maternal Status Select -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-mono text-brand-sage uppercase tracking-wider" for="mac-status">Maternal / Professional Status *</label>
+                        <select id="mac-status" required class="w-full bg-brand-dark border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm">
+                            <option value="">Select Status...</option>
+                            <option value="Pregnant">Pregnant Segment (Gestation Weeks 12-36)</option>
+                            <option value="Postnatal / Breastfeeding">Postnatal / Breastfeeding Segment</option>
+                            <option value="Birth Practitioner">Birth Practitioner (Midwife, Doula, Lactation Consultant)</option>
+                            <option value="Low-Tox Advocate">Low-Tox / Functional Toxin Advocate</option>
+                        </select>
+                    </div>
+                    <!-- Organization / Role -->
+                    <div class="space-y-2">
+                        <label class="text-xs font-mono text-brand-sage uppercase tracking-wider" for="mac-role">Organization / Practice & Role</label>
+                        <input type="text" id="mac-role" placeholder="Love Child Yoga / Midwife" class="w-full bg-brand-forest/20 border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm">
+                    </div>
+                </div>
+
+                <!-- Shipping Address -->
+                <div class="space-y-2">
+                    <label class="text-xs font-mono text-brand-sage uppercase tracking-wider" for="mac-address">Physical Shipping Address (For Sourcing Kit Courier Dispatch) *</label>
+                    <input type="text" id="mac-address" required placeholder="123 Clinical Wellness Way, Suite 400, New York, NY 10012" class="w-full bg-brand-forest/20 border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm">
+                    <p class="text-[10px] font-mono text-brand-sage">Courier requires physical addresses; PO boxes are not accepted.</p>
+                </div>
+
+                <!-- Statement of Interest -->
+                <div class="space-y-2">
+                    <label class="text-xs font-mono text-brand-sage uppercase tracking-wider" for="mac-message">Statement of Interest / Sourcing Goals *</label>
+                    <textarea id="mac-message" required rows="4" placeholder="Briefly describe your focus on clinical safety, maternal health, or toxin-free diet planning, and why you wish to test Pureji..." class="w-full bg-brand-forest/20 border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm"></textarea>
+                </div>
+
+                <div class="flex items-center gap-3 py-2">
+                    <input type="checkbox" id="mac-consent" required class="accent-brand-matcha">
+                    <label for="mac-consent" class="text-xs text-brand-sage leading-relaxed cursor-pointer">
+                        I agree to complete the Day 14 Sensory Survey and Day 30 Video Consultation in exchange for my complimentary Kit & Lifetime 40% VIP access.
+                    </label>
+                </div>
+
+                <!-- Error Messages -->
+                <div id="mac-error" class="hidden p-4 rounded bg-red-950/50 border border-red-500/30 text-xs text-red-300 font-mono"></div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="mac-submit-btn" class="w-full bg-brand-matcha hover:bg-brand-matcha/95 text-brand-cream font-mono font-bold text-sm tracking-widest uppercase py-4 rounded transition-all duration-300 transform hover:scale-[1.01] flex items-center justify-center gap-2">
+                    Submit Council Application & Activate Onboarding
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Priority Allocation Waitlist Section -->
+    <section id="waitlist-section" class="py-24 px-6 border-t border-brand-forest/40 bg-brand-dark/40">
+        <div class="max-w-md mx-auto space-y-8">
+            <div class="text-center space-y-4">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold">Request Priority Allocation</h2>
+                <p class="text-brand-sage text-sm leading-relaxed">
+                    Reserve your share of our upcoming spring volcanic-soil harvest lot. Signups logged below are automatically updated in our priority database queue.
+                </p>
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-forest/50 border border-brand-matcha/20 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-brand-matcha animate-pulse"></span>
+                    <span id="waitlist-count" class="text-xs font-mono text-brand-matcha font-bold">Calculating reservation list...</span>
+                </div>
+            </div>
+
+            <!-- Waitlist Form -->
+            <div id="waitlist-success-panel" class="hidden p-6 rounded bg-brand-forest/20 border border-brand-matcha/40 text-center space-y-4">
+                <span class="text-2xl">✓</span>
+                <h3 class="font-serif text-xl font-bold text-brand-cream">Allocation Code Secured</h3>
+                <p class="text-xs font-mono text-brand-sage">Your prenatal waitlist placement is logged. You will be contacted via email when Batch WZ-OB-26A-047B triggers general packaging release.</p>
+            </div>
+
+            <form id="waitlist-form" onsubmit="submitWaitlist(event)" class="space-y-4">
+                <div>
+                    <input type="text" id="wl-name" required placeholder="Your Name" class="w-full bg-brand-forest/20 border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm">
+                </div>
+                <div>
+                    <input type="email" id="wl-email" required placeholder="Your Email Address" class="w-full bg-brand-forest/20 border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm">
+                </div>
+                <div>
+                    <select id="wl-status" required class="w-full bg-brand-dark border border-brand-forest/80 rounded px-4 py-3 text-brand-cream focus:outline-none focus:border-brand-matcha font-mono text-sm">
+                        <option value="">Your Maternal Status...</option>
+                        <option value="Pregnant">Pregnant Segment</option>
+                        <option value="Postpartum / Nursing">Postnatal / Nursing</option>
+                        <option value="Birth Practitioner">Birth Practitioner</option>
+                        <option value="Supportive Partner">Supportive Partner</option>
+                    </select>
+                </div>
+                <button type="submit" id="wl-submit-btn" class="w-full bg-brand-cream text-brand-dark hover:bg-brand-accent hover:text-brand-dark font-mono text-xs font-bold tracking-widest uppercase py-4 rounded transition-all">
+                    Secure First-Flush Priority Allocation
+                </button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-charcoal text-brand-cream/60 py-16 px-6 md:px-12 border-t border-brand-forest/10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-brand-cream/10 pb-12 mb-12">
-            
-            <div class="space-y-4">
-                <div class="flex items-center gap-3 text-brand-cream">
-                    <div class="w-8 h-8 rounded-full bg-brand-cream flex items-center justify-center text-brand-forest font-serif font-bold border border-brand-gold/30">P</div>
-                    <span class="font-serif text-xl font-bold tracking-tight">Pureji</span>
-                </div>
-                <p class="text-xs leading-relaxed text-brand-cream/50 max-w-xs">
-                    Pureji is the pioneering maternal wellness food brand developing analytical solutions to heavy-metal agricultural soil accumulation.
-                </p>
+    <footer class="bg-brand-dark border-t border-brand-forest/40 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-brand-sage uppercase tracking-wider">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-brand-forest flex items-center justify-center font-serif text-brand-cream">P</span>
+                <span>Pureji Corp &copy; 2026</span>
             </div>
-
-            <div class="space-y-3">
-                <h4 class="font-mono text-xs uppercase font-bold tracking-wider text-brand-gold">Compliance & Standards</h4>
-                <ul class="text-xs space-y-2 text-brand-cream/40 font-mono">
-                    <li>FDA EAM Method 4.7 Standard</li>
-                    <li>ISO/IEC 17025 Accredited</li>
-                    <li>California Prop 65 Cleared</li>
-                    <li>Wazuka volcanic micro-lots</li>
-                </ul>
-            </div>
-
-            <div class="space-y-3">
-                <h4 class="font-mono text-xs uppercase font-bold tracking-wider text-brand-gold">Registries</h4>
-                <ul class="text-xs space-y-2 font-mono text-brand-cream/40">
-                    <li>Waitlist: 35351cd9-b995-48d6-9dc6-cb73f9d510c8</li>
-                    <li>Farms: 6292ecbe-1ca6-40c4-98d2-d9e8c6d8ce72</li>
-                    <li>Analytical: PL-SOP-002 Compliant</li>
-                </ul>
-            </div>
-
-            <div class="space-y-3">
-                <h4 class="font-mono text-xs uppercase font-bold tracking-wider text-brand-gold">Operations Desk</h4>
-                <ul class="text-xs space-y-2 text-brand-cream/40 font-mono">
-                    <li>Kyoto Sourcing: Wazuka Office</li>
-                    <li>US Fulfillment: Lafayette, CO</li>
-                    <li>Support: jefroykin@gmail.com</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-brand-cream/30 gap-4">
-            <span>&copy; 2026 Pureji, Inc. All rights reserved.</span>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-brand-cream transition-colors">Privacy Protocol</a>
-                <a href="#" class="hover:text-brand-cream transition-colors">Terms of Allocation</a>
+            <div class="flex flex-wrap gap-6 justify-center">
+                <a href="#" class="hover:text-brand-cream transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-cream transition-colors">Terms of Service</a>
+                <a href="mailto:jefroykin@gmail.com" class="hover:text-brand-cream transition-colors">jefroykin@gmail.com</a>
             </div>
         </div>
     </footer>
 
-    <!-- Client-Side Farm & Batch Lookup Scripts -->
+    <!-- JavaScript Controls -->
     <script>
-        const farmsDbId = "6292ecbe-1ca6-40c4-98d2-d9e8c6d8ce72";
-        const waitlistDbId = "35351cd9-b995-48d6-9dc6-cb73f9d510c8";
-        let activeFarmsArray = [];
+        // Database IDs
+        const farmsDbId = '6292ecbe-1ca6-40c4-98d2-d9e8c6d8ce72';
+        const waitlistDbId = '35351cd9-b995-48d6-9dc6-cb73f9d510c8';
+        const councilDbId = '7c906b77-c924-4742-a65d-a23090b5ee88';
 
-        // Dynamic lookup from the Uji Farms Sourcing Registry (publicReads)
+        // Static Registry Cache to prevent redundant calls
+        let farmsRegistry = [];
+
+        // Static serial mock data mapping for verification sandbox
+        const serialSandboxData = {
+            'WZ-OB-26A-047B': {
+                farm: 'Obubu Tea Farm',
+                region: 'Wazuka, Kyoto',
+                altitude: '500m',
+                soil: 'Volcanic-ash enriched loam with deep gravelly granite',
+                lead: 18,
+                cadmium: 65,
+                reportId: 'EF-90312-PB',
+                status: 'Approved'
+            },
+            'WZ-HR-26A-012A': {
+                farm: 'Hori Family Farm',
+                region: 'Wazuka, Kyoto',
+                altitude: '450m',
+                soil: 'Weathered volcanic granite and coarse organic loam',
+                lead: 22,
+                cadmium: 71,
+                reportId: 'EF-90315-PB',
+                status: 'Approved'
+            },
+            'WZ-KK-26A-033D': {
+                farm: 'Kaki-I Tea Farm',
+                region: 'Wazuka, Kyoto',
+                altitude: '380m',
+                soil: 'Pure weathered granite gravel with deep mountain irrigation',
+                lead: 12,
+                cadmium: 48,
+                reportId: 'EF-90401-PB',
+                status: 'Approved'
+            }
+        };
+
+        // Load farm database rows dynamically
         async function loadFarmsRegistry() {
-            const tabsContainer = document.getElementById('farm-tab-container');
+            const buttonsContainer = document.getElementById('farm-tab-buttons');
+            const contentContainer = document.getElementById('farm-tab-content');
             try {
                 const response = await fetch(`https://app.baget.ai/api/public/databases/${farmsDbId}/rows`);
                 if (response.ok) {
                     const data = await response.json();
-                    const farms = data.rows;
-                    if (farms && farms.length > 0) {
-                        activeFarmsArray = farms;
-                        tabsContainer.innerHTML = '';
-                        farms.forEach((farm, index) => {
+                    farmsRegistry = data.rows;
+                    
+                    if (farmsRegistry && farmsRegistry.length > 0) {
+                        buttonsContainer.innerHTML = '';
+                        farmsRegistry.forEach((farm, index) => {
                             const btn = document.createElement('button');
-                            btn.className = `w-full text-left p-4 rounded-lg border transition-all flex items-center justify-between ${index === 0 ? 'bg-brand-forest text-brand-cream border-transparent shadow-md' : 'bg-white text-brand-forest hover:bg-brand-cream/40 border-brand-forest/10'}`;
-                            btn.id = `tab-farm-${index}`;
-                            btn.onclick = () => selectFarmTab(index);
+                            btn.onclick = () => selectFarm(index);
+                            btn.id = `farm-btn-${index}`;
+                            btn.className = `w-full text-left p-5 rounded-xl border text-sm transition-all duration-300 font-mono ${index === 0 ? 'bg-brand-forest border-brand-matcha text-brand-cream' : 'bg-brand-dark border-brand-forest/60 text-brand-sage hover:border-brand-matcha'}`;
                             btn.innerHTML = `
-                                <div>
-                                    <h4 class="font-serif font-bold text-base">${farm.farm_name}</h4>
-                                    <p class="text-xs opacity-70 font-mono mt-0.5">${farm.region} | ${farm.average_elevation_meters}m</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="font-serif text-lg font-bold block">${farm.farm_name}</span>
+                                    <span class="text-xs text-brand-matcha font-bold">${farm.average_elevation_meters}m</span>
                                 </div>
-                                <span class="text-xs font-mono opacity-50">&gt;</span>
+                                <span class="text-xs text-brand-sage block mt-1">${farm.region}</span>
                             `;
-                            tabsContainer.appendChild(btn);
+                            buttonsContainer.appendChild(btn);
                         });
                         // Select first farm by default
-                        displayFarmTelemetry(0);
+                        selectFarm(0);
                     }
+                } else {
+                    throw new Error('Fallback required');
                 }
             } catch (error) {
-                console.error('Error loading farms registry:', error);
+                console.error('Error fetching farms registry, loading static fallbacks:', error);
+                // Fallback static load
+                farmsRegistry = [
+                    {
+                        farm_name: "Obubu Tea Farm",
+                        region: "Wazuka, Kyoto",
+                        average_elevation_meters: 500,
+                        soil_profile: "Volcanic-ash enriched loam with deep gravelly granite. Excellent drainage and high-altitude micro-climate.",
+                        cultivars: "Okumidori, Yabukita",
+                        testing_standards: "FDA EAM Method 4.7 (ICP-MS) for ultra-trace heavy metal detection (<50 ppb Lead)",
+                        contact_details: "info@obubutea.com"
+                    },
+                    {
+                        farm_name: "Hori Family Farm",
+                        region: "Wazuka, Kyoto",
+                        average_elevation_meters: 450,
+                        soil_profile: "Weathered volcanic granite and coarse organic-rich sandy loam. Highly porous, prevents root-zone water pooling.",
+                        cultivars: "Okumidori, Gokou, Samidori",
+                        testing_standards: "FDA EAM Method 4.7 (ICP-MS) for heavy metal safety screening",
+                        contact_details: "contact@horifamilyfarm.jp"
+                    },
+                    {
+                        farm_name: "Koyama Tea Farm & Garden",
+                        region: "Ujitawara, Kyoto",
+                        average_elevation_meters: 400,
+                        soil_profile: "Mineral-rich volcanic clay-loam on steep protected mountain slopes. Naturally high mineral-retention with mountain runoff barriers.",
+                        cultivars: "Yabukita, Ujihikari",
+                        testing_standards: "FDA EAM Method 4.7 (ICP-MS) certified heavy-metal-free, organic compliant protocols",
+                        contact_details: "info@koyamateafarm.jp"
+                    },
+                    {
+                        farm_name: "Kaki-I Tea Farm",
+                        region: "Wazuka, Kyoto",
+                        average_elevation_meters: 380,
+                        soil_profile: "Pure weathered granite gravel with deep mountain spring irrigation. Minimal background environmental contaminants.",
+                        cultivars: "Okumidori, Sayamakaori",
+                        testing_standards: "FDA EAM Method 4.7 (ICP-MS) batch-level verification and micro-lot tracking",
+                        contact_details: "contact@kaki-i.jp"
+                    }
+                ];
+                buttonsContainer.innerHTML = '';
+                farmsRegistry.forEach((farm, index) => {
+                    const btn = document.createElement('button');
+                    btn.onclick = () => selectFarm(index);
+                    btn.id = `farm-btn-${index}`;
+                    btn.className = `w-full text-left p-5 rounded-xl border text-sm transition-all duration-300 font-mono ${index === 0 ? 'bg-brand-forest border-brand-matcha text-brand-cream' : 'bg-brand-dark border-brand-forest/60 text-brand-sage hover:border-brand-matcha'}`;
+                    btn.innerHTML = `
+                        <div class="flex items-center justify-between">
+                            <span class="font-serif text-lg font-bold block">${farm.farm_name}</span>
+                            <span class="text-xs text-brand-matcha font-bold">${farm.average_elevation_meters}m</span>
+                        </div>
+                        <span class="text-xs text-brand-sage block mt-1">${farm.region}</span>
+                    `;
+                    buttonsContainer.appendChild(btn);
+                });
+                selectFarm(0);
             }
         }
 
-        function selectFarmTab(index) {
-            activeFarmsArray.forEach((_, i) => {
-                const btn = document.getElementById(`tab-farm-${i}`);
+        function selectFarm(index) {
+            const contentContainer = document.getElementById('farm-tab-content');
+            const farm = farmsRegistry[index];
+            
+            // Highlight button
+            farmsRegistry.forEach((_, idx) => {
+                const btn = document.getElementById(`farm-btn-${idx}`);
                 if (btn) {
-                    if (i === index) {
-                        btn.className = "w-full text-left p-4 rounded-lg border transition-all flex items-center justify-between bg-brand-forest text-brand-cream border-transparent shadow-md";
+                    if (idx === index) {
+                        btn.className = "w-full text-left p-5 rounded-xl border text-sm transition-all duration-300 font-mono bg-brand-forest border-brand-matcha text-brand-cream";
                     } else {
-                        btn.className = "w-full text-left p-4 rounded-lg border transition-all flex items-center justify-between bg-white text-brand-forest hover:bg-brand-cream/40 border-brand-forest/10";
+                        btn.className = "w-full text-left p-5 rounded-xl border text-sm transition-all duration-300 font-mono bg-brand-dark border-brand-forest/60 text-brand-sage hover:border-brand-matcha";
                     }
                 }
             });
-            displayFarmTelemetry(index);
+
+            contentContainer.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between border-b border-brand-forest/60 pb-4">
+                        <h3 class="font-serif text-3xl font-bold text-brand-cream">${farm.farm_name}</h3>
+                        <span class="px-3 py-1 border border-brand-matcha text-brand-matcha font-mono text-xs rounded uppercase tracking-wider">${farm.region}</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-mono text-brand-sage uppercase tracking-wider block">Geological Soil Profile</span>
+                            <p class="text-sm text-brand-cream leading-relaxed">${farm.soil_profile}</p>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-mono text-brand-sage uppercase tracking-wider block">Botanical Cultivars</span>
+                            <p class="text-sm font-mono text-brand-matcha font-bold">${farm.cultivars}</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-brand-dark/80 border border-brand-forest space-y-3">
+                        <span class="text-[10px] font-mono text-brand-sage uppercase tracking-wider block">Testing Protocols & Sourcing Compliance</span>
+                        <p class="text-xs text-brand-sage leading-relaxed">${farm.testing_standards}</p>
+                        <div class="flex items-center justify-between text-[11px] font-mono text-brand-accent pt-2 border-t border-brand-forest/40">
+                            <span>Primary Coordination: ${farm.contact_details}</span>
+                            <a href="#council-registration" class="hover:underline text-brand-matcha">Request Batch Sourcing Reserve &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
-        function displayFarmTelemetry(index) {
-            const farm = activeFarmsArray[index];
-            if (!farm) return;
-            document.getElementById('view-farm-name').textContent = farm.farm_name;
-            document.getElementById('view-region').textContent = farm.region;
-            document.getElementById('view-elevation').textContent = `${farm.average_elevation_meters}m`;
-            document.getElementById('view-soil').textContent = farm.soil_profile;
-            document.getElementById('view-cultivars').textContent = farm.cultivars;
-            document.getElementById('view-standards').textContent = farm.testing_standards;
-            document.getElementById('view-contact').textContent = `Sourcing ID: ${farm.contact_details.split(',')[0]}`;
-        }
-
-        // Live Allocation Counter Lookups
-        async function loadWaitlistCount() {
-            try {
-                const response = await fetch(`https://app.baget.ai/api/public/databases/${waitlistDbId}/count`);
-                if (response.ok) {
-                    const data = await response.json();
-                    const liveCount = data.count || 0;
-                    document.getElementById('waitlist-counter').textContent = 147 + liveCount;
-                } else {
-                    document.getElementById('waitlist-counter').textContent = 147;
-                }
-            } catch (error) {
-                document.getElementById('waitlist-counter').textContent = 147;
-            }
-        }
-
-        // Form POST waitlist handling
-        async function submitWaitlist(e) {
-            e.preventDefault();
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Processing Sourcing Request...";
-
-            const name = document.getElementById('form-name').value;
-            const email = document.getElementById('form-email').value;
-            const status = document.getElementById('form-status').value;
-
-            try {
-                const response = await fetch(`https://app.baget.ai/api/public/databases/${waitlistDbId}/rows`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        data: {
-                            name: name,
-                            email: email,
-                            maternal_status: status
-                        }
-                    })
-                });
-
-                if (response.ok) {
-                    document.getElementById('waitlist-form').classList.add('hidden');
-                    document.getElementById('waitlist-success').classList.remove('hidden');
-                    loadWaitlistCount();
-                } else {
-                    alert('Submission error. Please verify parameters or retry.');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = "Submit Advisory Application";
-                }
-            } catch (error) {
-                console.error('Waitlist submit error:', error);
-                alert('Connection timeout. Please retry.');
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Submit Advisory Application";
-            }
-        }
-
-        // Batch Verification Sandbox Lookups
-        const mockBatchDetails = {
-            'WZ-OB-26A-047B': {
-                farm: 'Obubu Tea Farm Volcanic Micro-Lot',
-                release: 'Approved & Released',
-                leadPpb: 18,
-                cadmiumPpb: 65,
-                reportId: 'EF-90312-PB',
-                leadPercentage: 7.2,
-                cadmiumPercentage: 3.1
-            },
-            'WZ-HR-26A-012A': {
-                farm: 'Hori Family Farm High-Altitude Lot',
-                release: 'Approved & Released',
-                leadPpb: 22,
-                cadmiumPpb: 71,
-                reportId: 'EF-90315-PB',
-                leadPercentage: 8.8,
-                cadmiumPercentage: 3.4
-            },
-            'WZ-KK-26A-033D': {
-                farm: 'Kaki-I Tea Farm Weathered Granite Lot',
-                release: 'Approved & Released',
-                leadPpb: 12,
-                cadmiumPpb: 48,
-                reportId: 'EF-90401-PB',
-                leadPercentage: 4.8,
-                cadmiumPercentage: 2.3
-            }
-        };
-
-        function applyBatchCode(code) {
-            document.getElementById('btsn-input').value = code;
-            lookupBatchTelemetry();
-        }
-
-        function lookupBatchTelemetry() {
-            const inputVal = document.getElementById('btsn-input').value.trim().toUpperCase();
-            if (!inputVal) {
-                alert('Please enter a valid Batch-to-Tin Serial Number.');
-                return;
-            }
-
-            const data = mockBatchDetails[inputVal];
-            if (data) {
-                document.getElementById('output-farm-name').textContent = data.farm;
-                document.getElementById('output-release-status').textContent = data.release;
-                
-                document.getElementById('lead-value').textContent = `${data.leadPpb} ppb`;
-                document.getElementById('lead-bar').style.width = `${data.leadPercentage}%`;
-                
-                document.getElementById('cadmium-value').textContent = `${data.cadmiumPpb} ppb`;
-                document.getElementById('cadmium-bar').style.width = `${data.cadmiumPercentage}%`;
-                
-                document.getElementById('output-report-id').textContent = data.reportId;
-            } else {
-                // Return dynamic default generated for input
-                const hashValue = inputVal.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-                const leadSeed = (hashValue % 25) + 8; // 8 to 33 ppb
-                const cadmiumSeed = (hashValue % 60) + 30; // 30 to 90 ppb
-                
-                document.getElementById('output-farm-name').textContent = `Uji Highlands Verified Lot (${inputVal.slice(0,5)})`;
-                document.getElementById('output-release-status').textContent = 'Approved & Safe';
-                
-                document.getElementById('lead-value').textContent = `${leadSeed} ppb`;
-                document.getElementById('lead-bar').style.width = `${(leadSeed/250)*100}%`;
-                
-                document.getElementById('cadmium-value').textContent = `${cadmiumSeed} ppb`;
-                document.getElementById('cadmium-bar').style.width = `${(cadmiumSeed/2050)*100}%`;
-                
-                document.getElementById('output-report-id').textContent = `EF-90${hashValue % 900 + 100}-PB`;
-            }
-        }
-
-        // Heavy Metal Exposure Calculator logic
+        // Heavy Metal Exposure Calculator
         function runExposureCalculator() {
             const grams = parseFloat(document.getElementById('calc-grams-slider').value);
             document.getElementById('calc-grams-display').textContent = `${grams.toFixed(1)}g`;
 
-            // Concentrations: Typical Lowland (350 ppb), Pureji (18 ppb)
             const typicalLeadPpb = 350;
             const purejiLeadPpb = 18;
 
-            // Compute micrograms (mcg) = grams * (ppb / 1000)
+            // Ingestion exposure in microgram (mcg) = grams * (ppb / 1000)
             const typicalLeadExposure = grams * (typicalLeadPpb / 1000);
             const purejiLeadExposure = grams * (purejiLeadPpb / 1000);
 
-            // Update Text Displays
             document.getElementById('calc-typical-exposure').textContent = `${typicalLeadExposure.toFixed(3)} mcg`;
             document.getElementById('calc-pureji-exposure').textContent = `${purejiLeadExposure.toFixed(3)} mcg`;
 
-            // Prop 65 reproductive limit is 0.50 mcg
             const prop65Limit = 0.50;
-
-            // Safety comparison percentages for bar widths
-            // Let's cap the visual scale dynamically so that 1.0 mcg = 100% bar width
             const maxScaleMcg = Math.max(typicalLeadExposure * 1.1, 1.0);
             const typicalBarWidth = (typicalLeadExposure / maxScaleMcg) * 100;
             const purejiBarWidth = (purejiLeadExposure / maxScaleMcg) * 100;
             const prop65LinePercent = (prop65Limit / maxScaleMcg) * 100;
 
-            // Update Bars
             document.getElementById('calc-typical-bar').style.width = `${typicalBarWidth}%`;
             document.getElementById('calc-pureji-bar').style.width = `${purejiBarWidth}%`;
             
-            // Adjust the dashed visual line representing Prop 65 threshold on both bars
             document.getElementById('calc-prop65-line-typical').style.left = `${prop65LinePercent}%`;
             document.getElementById('calc-prop65-line-pureji').style.left = `${prop65LinePercent}%`;
 
-            // Update safety multiplier text
-            const safetyFactor = typicalLeadExposure / purejiLeadExposure;
             const timesBelow = prop65Limit / purejiLeadExposure;
             document.getElementById('calc-pureji-safety-factor').textContent = `${timesBelow.toFixed(1)}x below Prop 65 threshold`;
 
-            // Dynamic recommendation boxes and warning states
             const box = document.getElementById('calc-recommendation-box');
             const icon = document.getElementById('calc-recommendation-icon');
             const title = document.getElementById('calc-recommendation-title');
             const desc = document.getElementById('calc-recommendation-desc');
 
             if (typicalLeadExposure > prop65Limit) {
-                box.className = "p-5 rounded-xl border border-red-200 bg-red-50 text-red-900 flex items-start gap-4 transition-all duration-300";
+                box.className = "p-5 rounded-xl border border-red-900/30 bg-red-950/20 text-red-300 flex items-start gap-4 transition-all duration-300";
                 icon.textContent = "⚠️";
                 title.textContent = "Warning: Safety Limits Exceeded";
                 desc.textContent = `At ${grams.toFixed(1)}g daily, typical lowland brands expose you to ${typicalLeadExposure.toFixed(2)} mcg of lead—exceeding the California Prop 65 reproductive safety limit of 0.50 mcg. Pureji keeps you completely safe at just ${purejiLeadExposure.toFixed(3)} mcg.`;
@@ -920,11 +751,201 @@
             }
         }
 
-        // Initialize Page
+        // BTSN Verification Sandbox controls
+        function setBTSN(code) {
+            document.getElementById('btsn-input').value = code;
+            runVerification();
+        }
+
+        function runVerification() {
+            const input = document.getElementById('btsn-input').value.trim();
+            const card = document.getElementById('btsn-result-card');
+            
+            const record = serialSandboxData[input];
+
+            if (record) {
+                const leadProp65Limit = 250;
+                const cadmiumProp65Limit = 2050;
+
+                const leadPercent = (record.lead / leadProp65Limit) * 100;
+                const cadmiumPercent = (record.cadmium / cadmiumProp65Limit) * 100;
+
+                card.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-brand-forest/60 pb-4 gap-4">
+                            <div>
+                                <span class="text-[10px] font-mono text-brand-sage uppercase tracking-wider block">Source Terroir Verified</span>
+                                <h3 class="font-serif text-2xl font-bold text-brand-cream">${record.farm} (${record.altitude})</h3>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="px-3 py-1 bg-brand-forest text-brand-matcha font-mono text-xs rounded border border-brand-matcha/30 uppercase tracking-wider font-bold">Certificate Status: ${record.status}</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Lead verification -->
+                            <div class="space-y-3">
+                                <div class="flex justify-between text-xs font-mono">
+                                    <span class="text-brand-cream">Lead (Pb) Level</span>
+                                    <span class="font-bold text-brand-matcha">${record.lead} ppb</span>
+                                </div>
+                                <div class="relative w-full h-3 bg-brand-dark rounded overflow-hidden border border-brand-forest/60">
+                                    <div class="h-full bg-brand-matcha" style="width: ${leadPercent}%;"></div>
+                                </div>
+                                <div class="flex justify-between text-[9px] font-mono text-brand-sage">
+                                    <span>Pureji Limit: 50 ppb</span>
+                                    <span>Prop 65 MADL: 250 ppb</span>
+                                </div>
+                            </div>
+
+                            <!-- Cadmium verification -->
+                            <div class="space-y-3">
+                                <div class="flex justify-between text-xs font-mono">
+                                    <span class="text-brand-cream">Cadmium (Cd) Level</span>
+                                    <span class="font-bold text-brand-matcha">${record.cadmium} ppb</span>
+                                </div>
+                                <div class="relative w-full h-3 bg-brand-dark rounded overflow-hidden border border-brand-forest/60">
+                                    <div class="h-full bg-brand-matcha" style="width: ${cadmiumPercent}%;"></div>
+                                </div>
+                                <div class="flex justify-between text-[9px] font-mono text-brand-sage">
+                                    <span>Pureji Limit: 200 ppb</span>
+                                    <span>Prop 65 MADL: 2050 ppb</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-brand-forest/40 flex flex-col md:flex-row justify-between items-start md:items-center text-xs font-mono text-brand-sage gap-2">
+                            <span>Lab Report ID: <span class="text-brand-cream">${record.reportId}</span></span>
+                            <span>Analytical Method: <span class="text-brand-cream">FDA EAM 4.7 ICP-MS</span></span>
+                            <span class="text-brand-matcha">Secure Spring 2026 First Flush</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                card.innerHTML = `
+                    <div class="text-center py-8 text-brand-sage font-mono space-y-4">
+                        <p class="text-xs">No active custom report matching Serial "${input}" was found in the active quarantine buffer.</p>
+                        <p class="text-[11px] text-brand-accent">Available test serial codes: WZ-OB-26A-047B, WZ-HR-26A-012A, WZ-KK-26A-033D</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Maternal Advisory Council Application Submission (LOAD-BEARING FLOW)
+        async function submitMacApplication(event) {
+            event.preventDefault();
+            const name = document.getElementById('mac-name').value.trim();
+            const email = document.getElementById('mac-email').value.trim();
+            const maternal_status = document.getElementById('mac-status').value;
+            const organization_role = document.getElementById('mac-role').value.trim() || 'Independent';
+            const shipping_address = document.getElementById('mac-address').value.trim();
+            const message = document.getElementById('mac-message').value.trim();
+            const errorDiv = document.getElementById('mac-error');
+            const submitBtn = document.getElementById('mac-submit-btn');
+
+            errorDiv.classList.add('hidden');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Registering with Clinical Registry...';
+
+            try {
+                const response = await fetch(`https://app.baget.ai/api/public/databases/${councilDbId}/rows`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        data: {
+                            name,
+                            email,
+                            maternal_status,
+                            organization_role,
+                            shipping_address,
+                            message,
+                            pipeline_stage: "Stage 1: Applied/Nominated",
+                            agreement_status: false
+                        }
+                    })
+                });
+
+                if (response.ok) {
+                    // Update welcome response name dynamically on screen
+                    document.getElementById('welcome-name').textContent = name;
+                    
+                    // Toggle displays
+                    document.getElementById('mac-form').classList.add('hidden');
+                    document.getElementById('mac-success-panel').classList.remove('hidden');
+                } else {
+                    const err = await response.json();
+                    throw new Error(err.message || 'Error executing application submittal.');
+                }
+            } catch (error) {
+                console.error(error);
+                errorDiv.textContent = `Submission Error: ${error.message || 'Server timeout. Please verify parameters and re-submit.'}`;
+                errorDiv.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Council Application & Activate Onboarding';
+            }
+        }
+
+        function resetMacForm() {
+            document.getElementById('mac-form').reset();
+            document.getElementById('mac-form').classList.remove('hidden');
+            document.getElementById('mac-success-panel').classList.add('hidden');
+            const submitBtn = document.getElementById('mac-submit-btn');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Council Application & Activate Onboarding';
+        }
+
+        // Waitlist submission controls
+        async function loadWaitlistCount() {
+            try {
+                const response = await fetch(`https://app.baget.ai/api/public/databases/${waitlistDbId}/count`);
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('waitlist-count').textContent = `${data.count} mothers requested priority allocation`;
+                }
+            } catch (error) {
+                document.getElementById('waitlist-count').textContent = `Active queue running for spring first flush`;
+            }
+        }
+
+        async function submitWaitlist(event) {
+            event.preventDefault();
+            const name = document.getElementById('wl-name').value.trim();
+            const email = document.getElementById('wl-email').value.trim();
+            const maternal_status = document.getElementById('wl-status').value;
+            const submitBtn = document.getElementById('wl-submit-btn');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Reserving allocation...';
+
+            try {
+                const response = await fetch(`https://app.baget.ai/api/public/databases/${waitlistDbId}/rows`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        data: {
+                            name,
+                            email,
+                            maternal_status
+                        }
+                    })
+                });
+
+                if (response.ok) {
+                    document.getElementById('waitlist-form').classList.add('hidden');
+                    document.getElementById('waitlist-success-panel').classList.remove('hidden');
+                    loadWaitlistCount();
+                }
+            } catch (error) {
+                console.error('Waitlist submission failed:', error);
+            }
+        }
+
+        // Initializer sequence
         window.addEventListener('DOMContentLoaded', () => {
             loadFarmsRegistry();
-            loadWaitlistCount();
             runExposureCalculator();
+            runVerification();
+            loadWaitlistCount();
         });
     </script>
 </body>
