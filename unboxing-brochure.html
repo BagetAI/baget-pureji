@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pureji Print Assets - Sample Kit Insert & Safety Handbook</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FBFBF9',
+              forest: '#1E3020',
+              matcha: '#4C803B',
+              sage: '#7A9A82',
+              charcoal: '#121411',
+              grey: '#8C908A'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: #ffffff;
+        color: #121411;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-sheet {
+        page-break-after: always;
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+    /* Crop Mark Stylings */
+    .crop-mark-tl { border-top: 1px solid #8C908A; border-left: 1px solid #8C908A; width: 12px; height: 12px; position: absolute; top: -4px; left: -4px; }
+    .crop-mark-tr { border-top: 1px solid #8C908A; border-right: 1px solid #8C908A; width: 12px; height: 12px; position: absolute; top: -4px; right: -4px; }
+    .crop-mark-bl { border-bottom: 1px solid #8C908A; border-left: 1px solid #8C908A; width: 12px; height: 12px; position: absolute; bottom: -4px; left: -4px; }
+    .crop-mark-br { border-bottom: 1px solid #8C908A; border-right: 1px solid #8C908A; width: 12px; height: 12px; position: absolute; bottom: -4px; right: -4px; }
+    .fold-line { border-left: 1px dashed rgba(122, 154, 130, 0.3); height: 100%; position: absolute; top: 0; }
+  </style>
+</head>
+<body class="bg-[#121411]/5 font-sans text-brand-charcoal min-height-screen">
+
+  <!-- Interactive Controls Dashboard -->
+  <header class="no-print bg-brand-forest text-brand-cream py-4 px-6 sticky top-0 z-50 shadow-md border-b border-brand-matcha/20">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <!-- Monogram SVG -->
+        <svg class="w-8 h-8 fill-current text-brand-matcha" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M40,25 C40,25 65,25 65,45 C65,65 40,65 40,65 L40,25 Z M40,25 L40,80" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M40,45 C45,35 55,30 60,35 C65,40 55,50 40,55" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div>
+          <h1 class="font-serif text-xl font-bold tracking-wide">Pureji</h1>
+          <p class="text-xs text-brand-sage font-mono tracking-tight">MAC Kit Print &amp; Packaging Assets v1.4</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="window.print()" class="bg-brand-matcha hover:bg-brand-matcha/90 text-brand-cream px-4 py-2 rounded font-sans text-sm font-semibold tracking-wide transition-all shadow-sm">
+          Print Asset Sheets
+        </button>
+        <button onclick="toggleFolds()" class="border border-brand-sage text-brand-sage hover:bg-brand-cream/5 px-3 py-2 rounded font-mono text-xs transition-all">
+          Toggle Print Guides
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-4 md:p-8 space-y-16">
+
+    <!-- Section 1: Tri-Fold Packaging Insert Brochure -->
+    <section class="space-y-6">
+      <div class="no-print border-b border-brand-forest/10 pb-4">
+        <h2 class="font-serif text-3xl font-bold text-brand-forest">1. Tri-Fold Packaging Insert (Outside &amp; Inside Sheets)</h2>
+        <p class="text-brand-grey text-sm font-sans max-w-2xl mt-1">Designed for a premium vertical 9" x 12" flat sheet, folding down to three 9" x 4" vertical panels. Features the pristine layout with custom ICP-MS calibration tables and geological moats.</p>
+      </div>
+
+      <!-- Sheet A: Outside Panels (Panel 5, Panel 6, Panel 1) -->
+      <div class="print-sheet bg-brand-cream border border-brand-forest/10 shadow-lg relative p-8 max-w-[1200px] mx-auto" id="outside-sheet">
+        <!-- Print crop marks -->
+        <div class="crop-mark-tl print-only"></div>
+        <div class="crop-mark-tr print-only"></div>
+        <div class="crop-mark-bl print-only"></div>
+        <div class="crop-mark-br print-only"></div>
+        
+        <!-- Interactive fold lines (Toggleable) -->
+        <div class="fold-lines absolute inset-0 pointer-events-none">
+          <div class="fold-line" style="left: 33.333%;"></div>
+          <div class="fold-line" style="left: 66.666%;"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 min-h-[550px] relative">
+          
+          <!-- Panel 5: The Pureji Shield (Our Four Trust Seals) -->
+          <div class="flex flex-col justify-between p-6 border-r border-brand-forest/5 relative">
+            <div>
+              <p class="font-mono text-[9px] tracking-widest text-brand-matcha font-bold uppercase mb-2">Technical Standards</p>
+              <h3 class="font-serif text-xl font-bold text-brand-forest mb-4 border-b border-brand-forest/15 pb-2">The Shield of Purity</h3>
+              <p class="font-sans text-xs text-brand-charcoal/80 leading-relaxed mb-6">Every serving is chemically validated to eliminate background contaminants, protecting both prenatal development and postpartum recovery.</p>
+              
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <!-- Custom SVG Seal 1 -->
+                  <svg class="w-8 h-8 text-brand-matcha flex-shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="#1E3020" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="42" fill="none" stroke="#7A9A82" stroke-width="1" stroke-dasharray="3, 3"/>
+                    <path d="M35,53 L45,63 L65,37" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <div>
+                    <h4 class="font-sans text-xs font-bold text-brand-forest uppercase">Triple-Screened</h4>
+                    <p class="font-sans text-[10px] text-brand-grey leading-tight">Soil profile, bulk import, and finished batches verified via ICP-MS analysis.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <!-- Custom SVG Seal 2 -->
+                  <svg class="w-8 h-8 text-brand-matcha flex-shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="#1E3020" stroke-width="2"/>
+                    <path d="M25,65 L40,40 L55,55 L75,30 L85,65 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M42,50 Q48,43 55,50" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                  <div>
+                    <h4 class="font-sans text-xs font-bold text-brand-forest uppercase">Volcanic Terroir</h4>
+                    <p class="font-sans text-[10px] text-brand-grey leading-tight">High-altitude mountain lots naturally insulated against heavy-metal root zone absorption.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <!-- Custom SVG Seal 3 -->
+                  <svg class="w-8 h-8 text-brand-matcha flex-shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="#1E3020" stroke-width="2"/>
+                    <text x="50" y="44" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#1E3020" text-anchor="middle">Pb</text>
+                    <line x1="30" y1="52" x2="70" y2="52" stroke="currentColor" stroke-width="2"/>
+                    <text x="50" y="66" font-family="'Inter', sans-serif" font-size="6" font-weight="700" fill="currentColor" text-anchor="middle">ZERO DETECTABLE</text>
+                  </svg>
+                  <div>
+                    <h4 class="font-sans text-xs font-bold text-brand-forest uppercase">Zero Lead Limit</h4>
+                    <p class="font-sans text-[10px] text-brand-grey leading-tight">Certified below 50 ppb safety ceiling—5x stricter than California Proposition 65.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-brand-forest/10 pt-4">
+              <span class="font-mono text-[9px] text-brand-grey">Pureji Certified Purity Standard</span>
+            </div>
+          </div>
+
+          <!-- Panel 6: Sourcing Logistics & Verification Box (Back Cover) -->
+          <div class="flex flex-col justify-between p-6 border-r border-brand-forest/5 relative">
+            <div>
+              <p class="font-mono text-[9px] tracking-widest text-brand-grey font-bold uppercase mb-2">SOP-Tracking Logistics</p>
+              <h3 class="font-serif text-xl font-bold text-brand-forest mb-4 border-b border-brand-forest/15 pb-2">Laboratory Trace</h3>
+              
+              <!-- Monospaced Data Block -->
+              <div class="bg-brand-charcoal/5 border border-brand-forest/10 p-3 rounded font-mono text-[9px] text-brand-charcoal space-y-1.5 mb-6">
+                <div><span class="text-brand-grey">BTSN:</span> WZ-OB-26A-047B</div>
+                <div><span class="text-brand-grey">HARVEST:</span> Spring 2026 (First Flush)</div>
+                <div><span class="text-brand-grey">ELEVATION:</span> 500m (Wazuka, Kyoto)</div>
+                <div><span class="text-brand-grey">ENTRY ID:</span> CBP-2026-94812</div>
+                <div><span class="text-brand-grey">TEST PROTOCOL:</span> FDA EAM Method 4.7</div>
+                <div><span class="text-brand-grey">FACILITY:</span> Eurofins Food Chemistry US</div>
+              </div>
+
+              <!-- QR Visual Box Mockup -->
+              <div class="border border-brand-forest/10 p-4 rounded-md flex flex-col items-center justify-center text-center bg-white space-y-2">
+                <!-- Custom SVG QR code mock -->
+                <svg class="w-24 h-24 text-brand-forest" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10,10 h20 v20 h-20 z M15,15 h10 v10 h-10 z" fill="currentColor"/>
+                  <path d="M70,10 h20 v20 h-20 z M75,15 h10 v10 h-10 z" fill="currentColor"/>
+                  <path d="M10,70 h20 v20 h-20 z M15,75 h10 v10 h-10 z" fill="currentColor"/>
+                  <path d="M40,10 h10 v10 h-10 z M55,10 h10 v10 h-10 z M45,25 h15 v5 h-15 z" fill="currentColor"/>
+                  <path d="M40,40 h5 v5 h-5 z M50,40 h15 v5 h-15 z M70,40 h20 v5 h-20 z" fill="currentColor"/>
+                  <path d="M10,40 h15 v10 h-15 z M35,55 h30 v5 h-30 z M75,55 h10 v15 h-10 z" fill="currentColor"/>
+                  <path d="M40,70 h15 v10 h-15 z M60,70 h30 v5 h-30 z M70,85 h20 v5 h-20 z" fill="currentColor"/>
+                </svg>
+                <span class="font-sans text-[9px] text-brand-forest font-bold tracking-tight">SCAN FOR LAB CERTIFICATE</span>
+              </div>
+            </div>
+            
+            <div class="text-[9px] text-brand-grey space-y-0.5 font-mono">
+              <div>Distributed by Pureji Corp, California.</div>
+              <div>Operations Lead: Jef Roykin</div>
+            </div>
+          </div>
+
+          <!-- Panel 1: The Front Cover (The Invitation) -->
+          <div class="flex flex-col justify-between p-6 bg-brand-cream relative">
+            <div class="text-center pt-8">
+              <!-- Geometric Monogram SVG -->
+              <svg class="w-16 h-16 mx-auto text-brand-forest mb-6" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M38,25 C38,25 64,25 64,45 C64,65 38,65 38,65 L38,80" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M38,45 C43,35 53,30 58,35 C63,40 53,50 38,55" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              </svg>
+              <h2 class="font-serif text-4xl font-bold text-brand-forest tracking-widest uppercase">Pureji</h2>
+              <p class="font-sans text-xs tracking-widest text-brand-sage uppercase font-bold mt-2">The Clinical Sourcing Kit</p>
+            </div>
+
+            <div class="text-center space-y-4">
+              <div class="w-8 h-[1px] bg-brand-matcha mx-auto"></div>
+              <p class="font-serif text-sm italic text-brand-forest leading-relaxed">A study in soil terroir, trace-metal chemistry, and the clean daily ritual.</p>
+              <div class="border border-brand-matcha/20 px-3 py-1.5 inline-block rounded bg-brand-matcha/5">
+                <span class="font-mono text-[9px] text-brand-matcha uppercase tracking-wider font-bold">Approved for Prenatal Consumption</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sheet B: Inside Panels (Panel 2: Terroir, Panel 3: Chemistry, Panel 4: Dosing Ritual) -->
+      <div class="print-sheet bg-brand-cream border border-brand-forest/10 shadow-lg relative p-8 max-w-[1200px] mx-auto" id="inside-sheet">
+        <!-- Print crop marks -->
+        <div class="crop-mark-tl print-only"></div>
+        <div class="crop-mark-tr print-only"></div>
+        <div class="crop-mark-bl print-only"></div>
+        <div class="crop-mark-br print-only"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 min-h-[550px] relative">
+          
+          <!-- Panel 2: Sourcing Terroir (The Mountain Defense) -->
+          <div class="flex flex-col justify-between p-6 border-r border-brand-forest/5">
+            <div>
+              <p class="font-mono text-[9px] tracking-widest text-brand-matcha font-bold uppercase mb-2">I. Geological Isolation</p>
+              <h3 class="font-serif text-2xl font-bold text-brand-forest mb-4 border-b border-brand-forest/15 pb-2">Mountain Moat</h3>
+              <p class="font-sans text-xs text-brand-charcoal/90 leading-relaxed space-y-3">
+                Matcha drinkers ingest 100% of the raw leaf. Standard lowland tea farms suffer from heavy-metal soil uptake due to ancient river basin runoff.
+              </p>
+              <div class="mt-4 space-y-4 text-xs">
+                <div class="border-l border-brand-matcha pl-3">
+                  <h4 class="font-sans font-bold text-brand-forest uppercase text-[11px]">Pristine Springs</h4>
+                  <p class="text-[10px] text-brand-grey">Irrigated by high-elevation springs above 350 meters, completely bypassing lowland river contamination.</p>
+                </div>
+                <div class="border-l border-brand-matcha pl-3">
+                  <h4 class="font-sans font-bold text-brand-forest uppercase text-[11px]">Volcanic Granite</h4>
+                  <p class="text-[10px] text-brand-grey">Weathered ash and coarse granite ensure rapid drainage, restricting root uptake of metals.</p>
+                </div>
+                <div class="border-l border-brand-matcha pl-3">
+                  <h4 class="font-sans font-bold text-brand-forest uppercase text-[11px]">Slow Growth</h4>
+                  <p class="text-[10px] text-brand-grey">Harsh mountain winters limit fast, aggressive nutrient uptake, concentrating pure amino acids.</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="font-mono text-[9px] text-brand-grey">Source: Wazuka Mountain micro-lots, Kyoto</span>
+            </div>
+          </div>
+
+          <!-- Panel 3: Analytical Chemistry (The Lab Standard) -->
+          <div class="flex flex-col justify-between p-6 border-r border-brand-forest/5">
+            <div>
+              <p class="font-mono text-[9px] tracking-widest text-brand-matcha font-bold uppercase mb-2">II. Micro-Element Precision</p>
+              <h3 class="font-serif text-2xl font-bold text-brand-forest mb-4 border-b border-brand-forest/15 pb-2">The ICP-MS Standard</h3>
+              <p class="font-sans text-xs text-brand-charcoal/90 leading-relaxed mb-4">
+                We digest samples in concentrated nitric acid and analyze under high-resolution plasma spectrometry (FDA EAM Method 4.7).
+              </p>
+              
+              <!-- Compliance Table -->
+              <div class="border border-brand-forest/10 rounded-sm overflow-hidden bg-white mb-4">
+                <table class="w-full text-[9px] font-mono text-left">
+                  <thead class="bg-brand-forest/5 border-b border-brand-forest/10 text-[8px] text-brand-grey">
+                    <tr>
+                      <th class="p-1">Metal</th>
+                      <th class="p-1">Prop 65</th>
+                      <th class="p-1">Pureji</th>
+                      <th class="p-1">Batch</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-brand-forest/5">
+                    <tr>
+                      <td class="p-1 font-sans font-bold text-brand-forest">Lead (Pb)</td>
+                      <td class="p-1 text-brand-grey">250 ppb</td>
+                      <td class="p-1 font-bold text-brand-matcha">&lt;50 ppb</td>
+                      <td class="p-1 text-brand-charcoal">18 ppb</td>
+                    </tr>
+                    <tr>
+                      <td class="p-1 font-sans font-bold text-brand-forest">Cadmium</td>
+                      <td class="p-1 text-brand-grey">2050 ppb</td>
+                      <td class="p-1 font-bold text-brand-matcha">&lt;200 ppb</td>
+                      <td class="p-1 text-brand-charcoal">65 ppb</td>
+                    </tr>
+                    <tr>
+                      <td class="p-1 font-sans font-bold text-brand-forest">Arsenic</td>
+                      <td class="p-1 text-brand-grey">5000 ppb</td>
+                      <td class="p-1 font-bold text-brand-matcha">&lt;100 ppb</td>
+                      <td class="p-1 text-brand-charcoal">12 ppb</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="font-sans text-[10px] text-brand-grey italic leading-tight">For prenatal safety, there is no acceptable background contamination. Pureji proves safety batch-by-batch.</p>
+            </div>
+            <div>
+              <span class="font-mono text-[9px] text-brand-grey">Testing executed by Eurofins Scientific</span>
+            </div>
+          </div>
+
+          <!-- Panel 4: The Clean Ritual (Precision Dosing) -->
+          <div class="flex flex-col justify-between p-6">
+            <div>
+              <p class="font-mono text-[9px] tracking-widest text-brand-matcha font-bold uppercase mb-2">III. Prenatal Dosing</p>
+              <h3 class="font-serif text-2xl font-bold text-brand-forest mb-4 border-b border-brand-forest/15 pb-2">The Daily Ritual</h3>
+              <p class="font-sans text-xs text-brand-charcoal/90 leading-relaxed mb-4">
+                Your kit includes a borosilicate glass beaker. Replacing traditional ceramic stoneware, this transparency mirrors our diagnostic safety.
+              </p>
+              <ol class="space-y-3 text-xs">
+                <li class="flex gap-2">
+                  <span class="font-mono text-brand-matcha font-bold">1.</span>
+                  <div>
+                    <strong class="font-sans text-brand-forest uppercase text-[10px]">Calibrate:</strong>
+                    <p class="text-[10px] text-brand-grey leading-tight">Measure exactly 2.0 grams (one standard scoop) of powder into the dry beaker.</p>
+                  </div>
+                </li>
+                <li class="flex gap-2">
+                  <span class="font-mono text-brand-matcha font-bold">2.</span>
+                  <div>
+                    <strong class="font-sans text-brand-forest uppercase text-[10px]">Measure Temp:</strong>
+                    <p class="text-[10px] text-brand-grey leading-tight">Heat clean water to exactly 80C (175F). Pour up to the 70ml graduation mark.</p>
+                  </div>
+                </li>
+                <li class="flex gap-2">
+                  <span class="font-mono text-brand-matcha font-bold">3.</span>
+                  <div>
+                    <strong class="font-sans text-brand-forest uppercase text-[10px]">Whisk Clean:</strong>
+                    <p class="text-[10px] text-brand-grey leading-tight">Whisk for 30s using the bamboo chasen to suspend the high-altitude fibers perfectly.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <div>
+              <span class="font-mono text-[9px] text-brand-grey">Consume with absolute biological security</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: 4-Page Safety Handbook Layout -->
+    <section class="space-y-6">
+      <div class="no-print border-b border-brand-forest/10 pb-4">
+        <h2 class="font-serif text-3xl font-bold text-brand-forest">2. The 4-Page Prenatal Safety Handbook</h2>
+        <p class="text-brand-grey text-sm font-sans max-w-2xl mt-1">A compact print book intended as a high-tactility, premium insert in our Sourcing Kits. Perfect for clinical midwifery waiting rooms and bedside tables.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[1000px] mx-auto">
+        
+        <!-- Page 1: Cover Page -->
+        <div class="print-sheet bg-brand-cream border border-brand-forest/10 p-12 aspect-[1/1.41] flex flex-col justify-between shadow-lg relative">
+          <div class="crop-mark-tl print-only"></div><div class="crop-mark-tr print-only"></div>
+          <div>
+            <span class="font-mono text-[10px] tracking-widest text-brand-matcha font-bold uppercase block mb-8">Pureji Clinical Library</span>
+            <h3 class="font-serif text-4xl font-bold text-brand-forest leading-tight mb-2">The Prenatal Safety Handbook</h3>
+            <p class="font-sans text-sm text-brand-grey font-semibold tracking-wider uppercase">A Clinical Guide to Trace-Metal Purity in Camellia Sinensis</p>
+          </div>
+          <div>
+            <div class="border-t border-brand-forest/15 pt-6 space-y-2">
+              <p class="font-sans text-xs text-brand-charcoal/80 leading-relaxed">Prepared for the Pureji Founding Maternal Advisory Council. Detail study of heavy-metal agricultural defense moats and microwave-assisted acid digestion protocols.</p>
+              <div class="flex items-center justify-between text-[9px] font-mono text-brand-grey pt-4">
+                <span>VOL: 2026.04</span>
+                <span>STATUS: CERTIFIED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page 2: Sourcing Terroir -->
+        <div class="print-sheet bg-brand-cream border border-brand-forest/10 p-12 aspect-[1/1.41] flex flex-col justify-between shadow-lg relative">
+          <div class="crop-mark-tl print-only"></div><div class="crop-mark-tr print-only"></div>
+          <div>
+            <span class="font-mono text-[9px] tracking-widest text-brand-matcha font-bold uppercase block mb-6">Page 02 // Sourcing Terroir</span>
+            <h3 class="font-serif text-2xl font-bold text-brand-forest mb-4 border-b border-brand-forest/15 pb-2">Natural Volcanic Barriers</h3>
+            <div class="space-y-4 font-sans text-xs text-brand-charcoal/90 leading-relaxed">
+              <p>Soil geology is our first layer of defense. In standard Japanese tea growing, lowland river basins accumulate heavy metals from historical industrialization. Because tea plants absorb up to 100% of minerals from soil, this contamination directly impacts the dry ground matcha leaf.</p>
+              <p>Pureji eliminates this risk. We source exclusively from isolated high-altitude micro-lots managed by <strong>Obubu Tea Farm</strong> and <strong>Hori Family Farm</strong> in Wazuka, Kyoto.</p>
+              <p>At heights up to 500m, these farms feature weathered volcanic ash and gravelly granite soils. The rapid natural water drainage prevents long-term root retention, restricting heavy-metal absorption. This is a natural geographical moat.</p>
+            </div>
+          </div>
+          <div class="border-t border-brand-forest/10 pt-4">
+            <span class="font-mono text-[9px] text-brand-grey">Kyoto Terroir elevation standard &gt; 350m</span>
+          </div>
+        </div>
+
+        <!-- Page 3: Analytical Protocols -->
+        <div class="print-sheet bg-brand-cream border border-brand-forest/10 p-12 aspect-[1/1.41] flex flex-col justify-between shadow-lg relative">
+          <div class="crop-mark-tl print-only"></div><div class="crop-mark-tr print-only"></div>
+          <div>
+            <span class="font-mono text-[9px] tracking-widest text-brand-matcha font-bold uppercase block mb-6">Page 03 // Analytical Standards</span>
+            <h3 class="font-serif text-2xl font-bold text-brand-forest mb-4 border-b border-brand-forest/15 pb-2">The ICP-MS Testing Protocol</h3>
+            <div class="space-y-4 font-sans text-xs text-brand-charcoal/90 leading-relaxed">
+              <p>We do not rely on standard agricultural testing. Pureji mandates batch-specific microwave-assisted wet digestion using concentrated ultra-pure nitric acid, followed by analysis via high-resolution <strong>Inductively Coupled Plasma Mass Spectrometry (ICP-MS)</strong> in accordance with <strong>FDA EAM Method 4.7</strong>.</p>
+              
+              <!-- Technical Specs Matrix -->
+              <div class="bg-white border border-brand-forest/10 rounded overflow-hidden">
+                <div class="bg-brand-forest/5 p-2 font-mono text-[8.5px] font-bold text-brand-forest border-b border-brand-forest/10">PRENATAL COMPLIANCE PROTOCOL (SERVING 2G)</div>
+                <div class="divide-y divide-brand-forest/5 font-mono text-[8.5px] p-2 space-y-1 text-brand-charcoal">
+                  <div class="flex justify-between"><span>Lead (Pb):</span> <span>&lt; 50 ppb Limit (Passed)</span></div>
+                  <div class="flex justify-between"><span>Cadmium (Cd):</span> <span>&lt; 200 ppb Limit (Passed)</span></div>
+                  <div class="flex justify-between"><span>Arsenic (As):</span> <span>&lt; 100 ppb Limit (Passed)</span></div>
+                  <div class="flex justify-between"><span>Mercury (Hg):</span> <span>&lt; 10 ppb Limit (Passed)</span></div>
+                </div>
+              </div>
+              <p class="text-[10px] text-brand-grey leading-tight italic">All evaluations are validated by Eurofins Scientific USA, an ISO/IEC 17025 accredited facility, ensuring complete, un-tampered compliance.</p>
+            </div>
+          </div>
+          <div class="border-t border-brand-forest/10 pt-4">
+            <span class="font-mono text-[9px] text-brand-grey">Method Reference: FDA Elemental Analysis Manual</span>
+          </div>
+        </div>
+
+        <!-- Page 4: Precision Dosing Ritual -->
+        <div class="print-sheet bg-brand-cream border border-brand-forest/10 p-12 aspect-[1/1.41] flex flex-col justify-between shadow-lg relative">
+          <div class="crop-mark-tl print-only"></div><div class="crop-mark-tr print-only"></div>
+          <div>
+            <span class="font-mono text-[9px] tracking-widest text-brand-matcha font-bold uppercase block mb-6">Page 04 // Preparation Guidelines</span>
+            <h3 class="font-serif text-2xl font-bold text-brand-forest mb-4 border-b border-brand-forest/15 pb-2">The Precision Dosing Ritual</h3>
+            <div class="space-y-4 font-sans text-xs text-brand-charcoal/90 leading-relaxed">
+              <p>To honor our scientific safety standard, replace traditional stoneware with the clean, borosilicate glass beaker included in your kit. This clinical transparency allows you to see the exact green hue of volcanic chlorophyll suspended in pure water.</p>
+              
+              <div class="space-y-3 mt-4">
+                <div class="flex gap-2">
+                  <span class="font-mono text-brand-matcha font-bold">I.</span>
+                  <p class="text-[11px]"><strong class="text-brand-forest font-sans uppercase text-[10px]">Scoop:</strong> Measure 2.0g (one level teaspoon) of Pureji powder directly into the dry beaker.</p>
+                </div>
+                <div class="flex gap-2">
+                  <span class="font-mono text-brand-matcha font-bold">II.</span>
+                  <p class="text-[11px]"><strong class="text-brand-forest font-sans uppercase text-[10px]">Calibrate:</strong> Pour hot spring water (exactly 80C / 175F) up to the 70mL graduation line.</p>
+                </div>
+                <div class="flex gap-2">
+                  <span class="font-mono text-brand-matcha font-bold">III.</span>
+                  <p class="text-[11px]"><strong class="text-brand-forest font-sans uppercase text-[10px]">Whisk:</strong> Suspend the fibers thoroughly for 30 seconds using your bamboo chasen until a thick micro-foam forms.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-brand-forest/10 pt-4">
+            <span class="font-mono text-[9px] text-brand-grey">Designed for peace of mind during motherhood</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="no-print bg-brand-charcoal text-brand-cream py-8 px-6 text-center text-xs font-mono border-t border-brand-forest/20 mt-16">
+    <div class="max-w-6xl mx-auto space-y-2 text-brand-grey">
+      <p>Pureji Corp &copy; 2026. All rights reserved. Sourced from Kyoto, tested in USA.</p>
+      <p class="text-[10px]">Confidential - Internal Advisory Council Sourcing Material Only</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFolds() {
+      const lines = document.querySelectorAll('.fold-line');
+      lines.forEach(line => {
+        line.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
