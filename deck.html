@@ -1,0 +1,230 @@
+<!--baget-deck-html:{"accent":"#4C803B","bg":"#FBFBF9","deckType":"pitch"}-->
+
+<section class="baget-deck-slide" data-slide-type="cover">
+  <style>
+    .cov { min-height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: clamp(28px, 6cqw, 72px) clamp(32px, 7cqw, 80px); background-color: var(--deck-bg); color: var(--deck-fg); text-align: center; box-sizing: border-box; container-type: inline-size }
+    .cov__logo-wrapper { margin-bottom: clamp(12px, 2.5cqw, 28px) }
+    .cov__logo-wrapper img { max-width: clamp(80px, 15cqw, 140px); height: auto; display: block; filter: drop-shadow(0 4px 12px rgba(30, 48, 32, 0.08)) }
+    .cov__title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(38px, 9cqw, 88px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin: 0; color: #1E3020 }
+    .cov__accent-line { width: clamp(40px, 8cqw, 80px); height: 2px; background-color: var(--deck-accent); margin: clamp(16px, 3cqw, 32px) auto }
+    .cov__tagline { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(15px, 2.2cqw, 24px); line-height: 1.45; color: var(--deck-muted); margin: 0; max-width: 32ch; overflow-wrap: anywhere }
+  </style>
+  <div class="cov">
+    <div class="cov__logo-wrapper">
+      <img src="https://baget-pureji.vercel.app/images/a-minimalist-ultra-premium-logo-monogra.png" data-slide-position="logo" alt="Pureji Official Monogram Logo" />
+    </div>
+    <h1 class="cov__title">Pureji</h1>
+    <div class="cov__accent-line" aria-hidden="true"></div>
+    <p class="cov__tagline">The world's first certified safe, triple-screened maternal matcha.</p>
+  </div>
+</section>
+
+<section class="baget-deck-slide" data-slide-type="problem">
+  <style>
+    .prob { min-height: 100%; display: grid; grid-template-columns: 55% 45%; align-items: center; gap: clamp(24px, 6cqw, 64px); padding: clamp(28px, 6cqw, 72px) clamp(32px, 7cqw, 80px); color: var(--deck-fg); background-color: var(--deck-bg); box-sizing: border-box; container-type: inline-size }
+    .prob__copy { display: flex; flex-direction: column; gap: clamp(12px, 2cqw, 24px) }
+    .prob__eyebrow { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(10px, 1.3cqw, 14px); font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--deck-accent); margin: 0 }
+    .prob__headline { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(24px, 4.4cqw, 48px); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; margin: 0; color: #1E3020; overflow-wrap: anywhere }
+    .prob__copy p { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(13px, 1.8cqw, 18px); line-height: 1.55; color: var(--deck-muted); margin: 0; max-width: 48ch; overflow-wrap: anywhere }
+    .prob__list { margin: 0; padding: 0; list-style-type: none; display: flex; flex-direction: column; gap: clamp(8px, 1.2cqw, 14px) }
+    .prob__list-item { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(12px, 1.6cqw, 16px); line-height: 1.45; color: #1E3020; display: flex; align-items: flex-start; gap: 10px }
+    .prob__list-item::before { content: ""; width: 6px; height: 6px; background-color: var(--deck-accent); border-radius: 50%; margin-top: 7px; flex-shrink: 0 }
+    .prob__visual { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/5; border: 1px solid rgba(30, 48, 32, 0.1) }
+    .prob__visual img { width: 100%; height: 100%; object-fit: cover; object-position: center }
+  </style>
+  <div class="prob">
+    <div class="prob__copy">
+      <p class="prob__eyebrow">The Looming Loophole</p>
+      <h2 class="prob__headline">Matcha drinkers consume 100% of the raw leaf, unknowingly ingesting heavy metals.</h2>
+      <p>Because tea plants absorb contaminants from lowland soils, premium organic lifestyle brands trigger Proposition 65 reproductive toxicity warnings in California.</p>
+      <ul class="prob__list">
+        <li class="prob__list-item">Traditional lowland farms suffer heavy metal root-zone uptake.</li>
+        <li class="prob__list-item">For developing fetuses and infants, there is no safe lead limit.</li>
+        <li class="prob__list-item">Safety-conscious millennial mothers face acute, unresolved anxiety.</li>
+      </ul>
+    </div>
+    <div class="prob__visual">
+      <img src="https://baget-pureji.vercel.app/images/photorealistic-editorial-product-photogr.png" data-slide-position="hero" alt="Sunlight reflecting off organic tea leaves on a pristine high-altitude mountainside" />
+    </div>
+  </div>
+</section>
+
+<section class="baget-deck-slide" data-slide-type="solution">
+  <style>
+    .sol { min-height: 100%; display: grid; grid-template-columns: 45% 55%; align-items: center; gap: clamp(24px, 6cqw, 64px); padding: clamp(28px, 6cqw, 72px) clamp(32px, 7cqw, 80px); color: var(--deck-fg); background-color: var(--deck-bg); box-sizing: border-box; container-type: inline-size }
+    .sol__visual { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/5; border: 1px solid rgba(30, 48, 32, 0.1) }
+    .sol__visual img { width: 100%; height: 100%; object-fit: cover; object-position: center }
+    .sol__copy { display: flex; flex-direction: column; gap: clamp(12px, 2cqw, 24px) }
+    .sol__eyebrow { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(10px, 1.3cqw, 14px); font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--deck-accent); margin: 0 }
+    .sol__headline { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(24px, 4.4cqw, 48px); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; margin: 0; color: #1E3020; overflow-wrap: anywhere }
+    .sol__copy p { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(13px, 1.8cqw, 18px); line-height: 1.55; color: var(--deck-muted); margin: 0; max-width: 48ch; overflow-wrap: anywhere }
+    .sol__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 2cqw, 24px) }
+    .sol__card { padding: clamp(12px, 2cqw, 20px); border-left: 2px solid var(--deck-accent); background-color: rgba(30, 48, 32, 0.02) }
+    .sol__card h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(14px, 2cqw, 20px); font-weight: 700; margin: 0 0 4px; color: #1E3020 }
+    .sol__card p { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(11px, 1.4cqw, 14px); line-height: 1.4; color: var(--deck-muted); margin: 0 }
+  </style>
+  <div class="sol">
+    <div class="sol__visual">
+      <img src="https://baget-pureji.vercel.app/images/high-fidelity-graphic-design-mockup-of-c.png" data-slide-position="hero" alt="Pureji minimal matte white aluminum tea tin with a glass laboratory beaker on warm travertine stone" />
+    </div>
+    <div class="sol__copy">
+      <p class="sol__eyebrow">The Pureji Standard</p>
+      <h2 class="sol__headline">Eliminating reproductive risk through strict geological isolation.</h2>
+      <p>By bypassing lowland flatlands, we isolate the industry's purest raw ingredients to completely resolve maternal anxieties.</p>
+      <div class="sol__grid">
+        <div class="sol__card">
+          <h3>Volcanic Terroir</h3>
+          <p>Sourced above 350m in Wazuka, Kyoto, where mountain springs and granite soils naturally filter contaminants.</p>
+        </div>
+        <div class="sol__card">
+          <h3>Batch-to-Tin</h3>
+          <p>On-tin QR codes link directly to unedited, certified third-party laboratory ICP-MS Certificates of Analysis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="baget-deck-slide" data-slide-type="market">
+  <style>
+    .sh { min-height: 100%; display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 6cqw, 72px) clamp(32px, 7cqw, 80px); color: var(--deck-fg); background-color: var(--deck-bg); box-sizing: border-box; container-type: inline-size }
+    .sh__eyebrow { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(10px, 1.3cqw, 14px); font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--deck-muted); margin: 0 0 8px }
+    .sh__title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(22px, 4cqw, 44px); font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 clamp(16px, 3cqw, 32px); max-width: 24ch; overflow-wrap: anywhere }
+    .sh__content { display: grid; grid-template-columns: 55% 45%; gap: clamp(24px, 4cqw, 48px); align-items: center }
+    .sh__text { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(14px, 1.8cqw, 18px); line-height: 1.55; color: var(--deck-muted); margin: 0 }
+    .sh__text strong { color: var(--deck-fg); font-weight: 600 }
+    .sh__svg-frame { width: 100%; height: auto; max-height: 240px }
+  </style>
+  <div class="sh">
+    <p class="sh__eyebrow">Trace-Element Precision</p>
+    <h2 class="sh__title">We test down to parts-per-billion, verifying safety batch-by-batch.</h2>
+    <div class="sh__content">
+      <div class="sh__text">
+        <p>Traditional atomic absorption assays fail to trace micro-impurities. Pureji utilizes microwave-assisted wet digestion and Inductively Coupled Plasma Mass Spectrometry (ICP-MS) following <strong>FDA EAM Method 4.7</strong> to prove absolute exemption from reproductive toxicant warnings.</p>
+      </div>
+      <div class="sh__svg-frame">
+        <svg viewbox="0 0 320 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <lineargradient id="bar-gradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--deck-accent)" stop-opacity="1" />
+              <stop offset="100%" stop-color="var(--deck-accent)" stop-opacity="0.4" />
+            </lineargradient>
+          </defs>
+          <line x1="10" y1="170" x2="310" y2="170" stroke="rgba(30, 48, 32, 0.1)" stroke-width="1" />
+          <line x1="10" y1="110" x2="310" y2="110" stroke="rgba(30, 48, 32, 0.05)" stroke-width="1" stroke-dasharray="2,2" />
+          <line x1="10" y1="50" x2="310" y2="50" stroke="rgba(30, 48, 32, 0.05)" stroke-width="1" stroke-dasharray="2,2" />
+          <line x1="10" y1="70" x2="310" y2="70" stroke="#7A9A82" stroke-width="1" stroke-dasharray="4,4" />
+          <text x="310" y="64" font-family="'JetBrains Mono', monospace" font-size="8" fill="#7A9A82" text-anchor="end">Prop 65 limit (250 ppb)</text>
+          <rect x="50" y="40" width="50" height="130" rx="4" fill="rgba(18, 20, 17, 0.08)" />
+          <text x="75" y="32" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#1E3020" text-anchor="middle">350 ppb</text>
+          <text x="75" y="185" font-family="'Inter', sans-serif" font-size="9" fill="var(--deck-muted)" text-anchor="middle">Competitors</text>
+          <rect x="170" y="163" width="50" height="7" rx="2" fill="url(#bar-gradient)" />
+          <text x="195" y="154" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="var(--deck-accent)" text-anchor="middle">18 ppb</text>
+          <text x="195" y="185" font-family="'Inter', sans-serif" font-size="9" font-weight="600" fill="#1E3020" text-anchor="middle">Pureji</text>
+          <text x="195" y="205" font-family="'JetBrains Mono', monospace" font-size="8" fill="var(--deck-accent)" text-anchor="middle">19x safer than limit</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="baget-deck-slide" data-slide-type="traction">
+  <style>
+    .trac { min-height: 100%; display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 6cqw, 72px) clamp(32px, 7cqw, 80px); color: var(--deck-fg); background-color: var(--deck-bg); box-sizing: border-box; container-type: inline-size }
+    .trac__eyebrow { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(10px, 1.3cqw, 14px); font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--deck-muted); margin: 0 }
+    .trac__title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(22px, 4cqw, 44px); font-weight: 700; line-height: 1.1; margin: 12px 0 clamp(20px, 4cqw, 48px); overflow-wrap: anywhere }
+    .trac__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 3cqw, 32px) }
+    .trac__stat-box { border-top: 1px solid rgba(30, 48, 32, 0.15); padding-top: clamp(12px, 2.5cqw, 24px) }
+    .trac__number { font-family: 'JetBrains Mono', monospace; font-size: clamp(32px, 6.5cqw, 64px); font-weight: 700; line-height: 1; color: var(--deck-accent); margin-bottom: 8px }
+    .trac__label { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(16px, 2.2cqw, 24px); font-weight: 700; color: #1E3020; margin: 0 0 6px }
+    .trac__desc { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(11px, 1.4cqw, 14px); line-height: 1.4; color: var(--deck-muted); margin: 0 }
+  </style>
+  <div class="trac">
+    <p class="trac__eyebrow">Proven Product-Market Fit</p>
+    <h2 class="trac__title">Rapidly locking in clinical authority and consumer trust.</h2>
+    <div class="trac__grid">
+      <div class="trac__stat-box">
+        <div class="trac__number">20</div>
+        <h3 class="trac__label">MAC Members</h3>
+        <p class="trac__desc">Founding Maternal Advisory Council consisting of elite midwives, doulas, and low-tox lifestyle experts.</p>
+      </div>
+      <div class="trac__stat-box">
+        <div class="trac__number">84.5%</div>
+        <h3 class="trac__label">Gross Margin</h3>
+        <p class="trac__desc">Highly optimized DTC unit economics that sustain premium pricing despite our 15% clean-soil premium.</p>
+      </div>
+      <div class="trac__stat-box">
+        <div class="trac__number">$58</div>
+        <h3 class="trac__label">Monthly Sub</h3>
+        <p class="trac__desc">Validated price-inelastic recurring subscription model representing daily prenatal piece-of-mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="baget-deck-slide" data-slide-type="pricing">
+  <style>
+    .grid { min-height: 100%; display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 6cqw, 72px) clamp(32px, 7cqw, 80px); gap: clamp(20px, 4cqw, 48px); color: var(--deck-fg); background-color: var(--deck-bg); box-sizing: border-box }
+    .grid__title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(22px, 4cqw, 44px); font-weight: 700; line-height: 1.1; margin: 0; text-align: center; max-width: 24ch; align-self: center; overflow-wrap: anywhere }
+    .grid__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 2.5cqw, 24px) }
+    .grid__card { padding: clamp(16px, 3cqw, 32px); border-radius: 8px; border: 1px solid rgba(30, 48, 32, 0.1); background: var(--deck-bg); display: flex; flex-direction: column; gap: clamp(8px, 1.5cqw, 16px) }
+    .grid__card--featured { border-color: var(--deck-accent); border-width: 2px; background-color: rgba(76, 128, 59, 0.02) }
+    .grid__card h3 { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(10px, 1.3cqw, 13px); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--deck-muted); margin: 0 }
+    .grid__card .price { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(28px, 4.2cqw, 48px); font-weight: 700; color: #1E3020; margin: 0; line-height: 1 }
+    .grid__card .price small { font-family: 'Inter', system-ui, sans-serif; font-size: 14px; font-weight: 400; color: var(--deck-muted) }
+    .grid__card ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px }
+    .grid__card li { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(12px, 1.5cqw, 15px); line-height: 1.4; color: #1E3020; overflow-wrap: anywhere }
+  </style>
+  <div class="grid">
+    <h2 class="grid__title">Restrained cost structures with massive DTC leverage.</h2>
+    <div class="grid__cards">
+      <div class="grid__card">
+        <h3>Landed COGS</h3>
+        <p class="price">$9.00<small>/tin</small></p>
+        <ul>
+          <li>Premium volcanic leaves</li>
+          <li>Cold-chain air freight</li>
+          <li>Amortized Eurofins testing</li>
+          <li>Premium matte white tins</li>
+        </ul>
+      </div>
+      <div class="grid__card grid__card--featured">
+        <h3>DTC Subscription</h3>
+        <p class="price">$58.00<small>/mo</small></p>
+        <ul>
+          <li>84.5% gross margin</li>
+          <li>High-LTV maternal window</li>
+          <li>Lowest category churn</li>
+          <li>Direct database traceability</li>
+        </ul>
+      </div>
+      <div class="grid__card">
+        <h3>Standard Retail</h3>
+        <p class="price">$75.00<small>/tin</small></p>
+        <ul>
+          <li>For one-time luxury gifting</li>
+          <li>Premium presentation box</li>
+          <li>High margin padding</li>
+          <li>Retail wholesale pipeline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="baget-deck-slide" data-slide-type="ask">
+  <style>
+    .ask { min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: clamp(28px, 6cqw, 72px) clamp(32px, 7cqw, 80px); background-color: var(--deck-bg); color: var(--deck-fg); text-align: center; box-sizing: border-box; container-type: inline-size }
+    .ask__eyebrow { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(11px, 1.4cqw, 16px); font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--deck-accent); margin: 0 0 16px }
+    .ask__title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 7cqw, 72px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 clamp(20px, 4cqw, 40px); color: #1E3020; max-width: 24ch; overflow-wrap: anywhere }
+    .ask__desc { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(14px, 2cqw, 20px); line-height: 1.5; color: var(--deck-muted); margin: 0 0 clamp(24px, 5cqw, 48px); max-width: 52ch; overflow-wrap: anywhere }
+    .ask__btn { font-family: 'Inter', system-ui, sans-serif; font-size: clamp(13px, 1.6cqw, 18px); font-weight: 600; color: var(--deck-bg); background-color: #1E3020; padding: clamp(12px, 2cqw, 20px) clamp(24px, 4cqw, 40px); border-radius: 8px; text-decoration: none; transition: background-color 0.2s ease, transform 0.2s ease }
+    .ask__btn:hover { background-color: var(--deck-accent) }
+  </style>
+  <div class="ask">
+    <p class="ask__eyebrow">The Seed Allocation</p>
+    <h2 class="ask__title">Raising $1.5M to scale our supply chain and dominate the prenatal wellness category.</h2>
+    <p class="ask__desc">We are opening allocations for our seed round to lock in high-altitude Kyoto plots, automate API integrations, and expand recommendations.</p>
+    <a href="mailto:jefroykin@gmail.com" class="ask__btn">Partner with Pureji</a>
+  </div>
+</section>
